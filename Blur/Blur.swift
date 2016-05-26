@@ -41,32 +41,11 @@ class CustomVisualEffectView: UIVisualEffectView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // ["grayscaleTintLevel", "grayscaleTintAlpha", "lightenGrayscaleWithSourceOver", "colorTint", "colorTintAlpha", "colorBurnTintLevel", "colorBurnTintAlpha", "darkeningTintAlpha", "darkeningTintHue", "darkeningTintSaturation", "darkenWithSourceOver", "blurRadius", "saturationDeltaFactor", "scale", "zoom"]
+    
     init() {
         self.blurEffect = (NSClassFromString("_UICustomBlurEffect") as! UIBlurEffect.Type).init()
         super.init(effect: self.blurEffect)
-        
-        // ["grayscaleTintLevel", "grayscaleTintAlpha", "lightenGrayscaleWithSourceOver", "colorTint", "colorTintAlpha", "colorBurnTintLevel", "colorBurnTintAlpha", "darkeningTintAlpha", "darkeningTintHue", "darkeningTintSaturation", "darkenWithSourceOver", "blurRadius", "saturationDeltaFactor", "scale", "zoom"]
-        
-        propertyNames(NSClassFromString("_UICustomBlurEffect").self!).forEach {
-            print("----->")
-            print($0)
-            print(self.blurEffect.valueForKeyPath($0))
-        }
     }
     
-}
-
-func propertyNames(forClass: AnyClass) -> [String] {
-    var count = UInt32()
-    let properties = class_copyPropertyList(forClass, &count)
-    let names: [String] = (0..<Int(count)).flatMap { i in
-        let property: objc_property_t = properties[i]
-        guard let name = NSString(UTF8String: property_getName(property)) as? String else {
-            debugPrint("Couldn't unwrap property name for \(property)")
-            return nil
-        }
-        return name
-    }
-    free(properties)
-    return names
 }
