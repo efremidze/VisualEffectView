@@ -37,15 +37,17 @@ class CustomVisualEffectView: UIVisualEffectView {
         set { blurEffect.setValue(newValue, forKeyPath: "scale"); self.effect = blurEffect }
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // ["grayscaleTintLevel", "grayscaleTintAlpha", "lightenGrayscaleWithSourceOver", "colorTint", "colorTintAlpha", "colorBurnTintLevel", "colorBurnTintAlpha", "darkeningTintAlpha", "darkeningTintHue", "darkeningTintSaturation", "darkenWithSourceOver", "blurRadius", "saturationDeltaFactor", "scale", "zoom"]
     
     init() {
         self.blurEffect = (NSClassFromString("_UICustomBlurEffect") as! UIBlurEffect.Type).init()
         super.init(effect: self.blurEffect)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.blurEffect = (NSClassFromString("_UICustomBlurEffect") as! UIBlurEffect.Type).init()
+        super.init(coder: aDecoder)
+        self.effect = self.blurEffect
     }
     
 }

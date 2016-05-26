@@ -10,17 +10,24 @@ import UIKit
 
 class ModalViewController: UIViewController {
 
+    @IBOutlet weak var visualEffectView: CustomVisualEffectView! {
+        didSet {
+            visualEffectView.colorTint = .redColor()
+            visualEffectView.colorTintAlpha = 0.2
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .clearColor()
         
-        let visualEffectView = CustomVisualEffectView()
-        visualEffectView.colorTint = .redColor()
-        visualEffectView.colorTintAlpha = 0.2
-        visualEffectView.frame = self.view.bounds
-        visualEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        self.view.insertSubview(visualEffectView, atIndex: 0)
+//        let visualEffectView = CustomVisualEffectView()
+//        visualEffectView.colorTint = .redColor()
+//        visualEffectView.colorTintAlpha = 0.2
+//        visualEffectView.frame = self.view.bounds
+//        visualEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+//        self.view.insertSubview(visualEffectView, atIndex: 0)
     }
 
 }
