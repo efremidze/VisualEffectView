@@ -11,19 +11,41 @@ import VisualEffectView
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView! {
+        didSet {
+            imageView.image = UIImage(data: NSData(contentsOfURL: NSURL(string: "https://octodex.github.com/images/welcometocat.png")!)!)
+        }
+    }
+    
     @IBOutlet weak var visualEffectView1: VisualEffectView! {
         didSet {
-            visualEffectView1.colorTint = .redColor()
-            visualEffectView1.colorTintAlpha = 0.5
-            visualEffectView1.blurRadius = 1
+            visualEffectView1.colorTint = .greenColor()
+            visualEffectView1.colorTintAlpha = 0.2
+            visualEffectView1.blurRadius = 4
         }
     }
     
     @IBOutlet weak var visualEffectView2: VisualEffectView! {
         didSet {
             visualEffectView2.colorTint = .blueColor()
-            visualEffectView2.colorTintAlpha = 0.5
-            visualEffectView2.blurRadius = 2
+            visualEffectView2.colorTintAlpha = 0.2
+            visualEffectView2.blurRadius = 4
+        }
+    }
+    
+    @IBOutlet weak var visualEffectView3: VisualEffectView! {
+        didSet {
+            visualEffectView3.colorTint = .yellowColor()
+            visualEffectView3.colorTintAlpha = 0.2
+            visualEffectView3.blurRadius = 4
+        }
+    }
+
+    @IBOutlet weak var visualEffectView4: VisualEffectView! {
+        didSet {
+            visualEffectView4.colorTint = .redColor()
+            visualEffectView4.colorTintAlpha = 0.2
+            visualEffectView4.blurRadius = 4
         }
     }
     

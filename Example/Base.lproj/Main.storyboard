@@ -17,24 +17,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This should be blurred" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiL-e3-shV">
-                                <rect key="frame" x="214.5" y="289" width="171.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hlA-L3-wjc">
+                                <rect key="frame" x="20" y="0.0" width="560" height="600"/>
+                            </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbm-Ax-NK5" customClass="VisualEffectView" customModule="VisualEffectView">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vgD-tv-O7P">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khr-4r-xDL" customClass="VisualEffectView" customModule="VisualEffectView">
-                                <rect key="frame" x="300" y="0.0" width="300" height="600"/>
+                                <rect key="frame" x="300" y="0.0" width="300" height="300"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ryb-n4-CsB">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhH-91-o5A" customClass="VisualEffectView" customModule="VisualEffectView">
+                                <rect key="frame" x="0.0" y="300" width="300" height="300"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bvE-AJ-bLc">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUF-Lu-MFo" customClass="VisualEffectView" customModule="VisualEffectView">
+                                <rect key="frame" x="300" y="300" width="300" height="300"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pMS-Nz-8ab">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="light"/>
@@ -42,21 +55,46 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="JUF-Lu-MFo" firstAttribute="top" secondItem="khr-4r-xDL" secondAttribute="bottom" id="3J5-my-hOx"/>
+                            <constraint firstItem="vhH-91-o5A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6Vm-N4-in7"/>
+                            <constraint firstAttribute="bottom" secondItem="JUF-Lu-MFo" secondAttribute="bottom" id="CLH-NO-m2c"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hlA-L3-wjc" secondAttribute="bottom" id="CZi-3x-Z7Y"/>
+                            <constraint firstItem="JUF-Lu-MFo" firstAttribute="leading" secondItem="vhH-91-o5A" secondAttribute="trailing" id="FG0-f2-54M"/>
+                            <constraint firstItem="hlA-L3-wjc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="HL0-7R-npT"/>
+                            <constraint firstItem="khr-4r-xDL" firstAttribute="height" secondItem="jbm-Ax-NK5" secondAttribute="height" id="HfG-t8-FxZ"/>
+                            <constraint firstItem="hlA-L3-wjc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="NWL-E2-T5T"/>
+                            <constraint firstItem="khr-4r-xDL" firstAttribute="width" secondItem="jbm-Ax-NK5" secondAttribute="width" id="PlY-gp-Dzx"/>
+                            <constraint firstItem="JUF-Lu-MFo" firstAttribute="height" secondItem="jbm-Ax-NK5" secondAttribute="height" id="Sln-dj-gRc"/>
+                            <constraint firstAttribute="bottom" secondItem="vhH-91-o5A" secondAttribute="bottom" id="TIf-Te-pld"/>
                             <constraint firstItem="khr-4r-xDL" firstAttribute="width" secondItem="jbm-Ax-NK5" secondAttribute="width" id="UAe-Ji-Hvd"/>
                             <constraint firstItem="khr-4r-xDL" firstAttribute="leading" secondItem="jbm-Ax-NK5" secondAttribute="trailing" id="VXC-bb-TY5"/>
                             <constraint firstItem="jbm-Ax-NK5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VrU-mh-gFq"/>
+                            <constraint firstItem="JUF-Lu-MFo" firstAttribute="width" secondItem="jbm-Ax-NK5" secondAttribute="width" id="Wmr-ar-kzE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="khr-4r-xDL" secondAttribute="bottom" id="ZBg-4E-RTU"/>
-                            <constraint firstItem="HiL-e3-shV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dUQ-CU-VO3"/>
+                            <constraint firstAttribute="trailing" secondItem="hlA-L3-wjc" secondAttribute="trailing" constant="20" id="gQv-Lk-px1"/>
                             <constraint firstAttribute="trailing" secondItem="khr-4r-xDL" secondAttribute="trailing" id="hln-AV-1ih"/>
                             <constraint firstItem="khr-4r-xDL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jYp-Zi-nOa"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jbm-Ax-NK5" secondAttribute="bottom" id="kx0-Kr-ryp"/>
-                            <constraint firstItem="HiL-e3-shV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="omZ-yH-HSh"/>
+                            <constraint firstItem="vhH-91-o5A" firstAttribute="width" secondItem="jbm-Ax-NK5" secondAttribute="width" id="mQm-uw-FZ3"/>
+                            <constraint firstItem="vhH-91-o5A" firstAttribute="height" secondItem="jbm-Ax-NK5" secondAttribute="height" id="nDw-Su-ywP"/>
+                            <constraint firstItem="vhH-91-o5A" firstAttribute="top" secondItem="jbm-Ax-NK5" secondAttribute="bottom" id="vwx-M1-b7b"/>
                             <constraint firstItem="jbm-Ax-NK5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xvL-cX-9RB"/>
+                            <constraint firstAttribute="trailing" secondItem="JUF-Lu-MFo" secondAttribute="trailing" id="zxD-ZO-oMY"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="UAe-Ji-Hvd"/>
+                                <exclude reference="ZBg-4E-RTU"/>
+                                <exclude reference="kx0-Kr-ryp"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="hlA-L3-wjc" id="vLW-VF-84g"/>
                         <outlet property="visualEffectView1" destination="jbm-Ax-NK5" id="sMG-1P-2M3"/>
                         <outlet property="visualEffectView2" destination="khr-4r-xDL" id="qJ0-3a-tRZ"/>
+                        <outlet property="visualEffectView3" destination="vhH-91-o5A" id="y5a-0d-MU8"/>
+                        <outlet property="visualEffectView4" destination="JUF-Lu-MFo" id="eqd-0i-brn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
