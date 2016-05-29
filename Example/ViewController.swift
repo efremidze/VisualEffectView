@@ -19,33 +19,29 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var visualEffectView1: VisualEffectView! {
         didSet {
-            visualEffectView1.colorTint = .greenColor()
-            visualEffectView1.colorTintAlpha = 0.2
-            visualEffectView1.blurRadius = 4
+            visualEffectView1.tint(.greenColor())
+            visualEffectView1.round()
         }
     }
     
     @IBOutlet weak var visualEffectView2: VisualEffectView! {
         didSet {
-            visualEffectView2.colorTint = .blueColor()
-            visualEffectView2.colorTintAlpha = 0.2
-            visualEffectView2.blurRadius = 4
+            visualEffectView2.tint(.blueColor())
+            visualEffectView2.round()
         }
     }
     
     @IBOutlet weak var visualEffectView3: VisualEffectView! {
         didSet {
-            visualEffectView3.colorTint = .yellowColor()
-            visualEffectView3.colorTintAlpha = 0.2
-            visualEffectView3.blurRadius = 4
+            visualEffectView3.tint(.yellowColor())
+            visualEffectView3.round()
         }
     }
 
     @IBOutlet weak var visualEffectView4: VisualEffectView! {
         didSet {
-            visualEffectView4.colorTint = .redColor()
-            visualEffectView4.colorTintAlpha = 0.2
-            visualEffectView4.blurRadius = 4
+            visualEffectView4.tint(.redColor())
+            visualEffectView4.round()
         }
     }
     
@@ -59,6 +55,21 @@ class ViewController: UIViewController {
 //        visualEffectView.frame = self.view.bounds
 //        visualEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
 //        self.view.addSubview(visualEffectView)
+    }
+    
+}
+
+extension VisualEffectView {
+    
+    func tint(color: UIColor) {
+        self.colorTint = color
+        self.colorTintAlpha = 0.2
+        self.blurRadius = 4
+    }
+    
+    func round() {
+        self.layer.cornerRadius = self.bounds.width / 2
+        self.layer.masksToBounds = true
     }
     
 }
