@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This should be blurred" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiL-e3-shV">
+                                <rect key="frame" x="214.5" y="289" width="171.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbm-Ax-NK5" customClass="VisualEffectView" customModule="VisualEffectView">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vgD-tv-O7P">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khr-4r-xDL" customClass="VisualEffectView" customModule="VisualEffectView">
+                                <rect key="frame" x="300" y="0.0" width="300" height="600"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ryb-n4-CsB">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="khr-4r-xDL" firstAttribute="width" secondItem="jbm-Ax-NK5" secondAttribute="width" id="UAe-Ji-Hvd"/>
+                            <constraint firstItem="khr-4r-xDL" firstAttribute="leading" secondItem="jbm-Ax-NK5" secondAttribute="trailing" id="VXC-bb-TY5"/>
+                            <constraint firstItem="jbm-Ax-NK5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VrU-mh-gFq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="khr-4r-xDL" secondAttribute="bottom" id="ZBg-4E-RTU"/>
+                            <constraint firstItem="HiL-e3-shV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dUQ-CU-VO3"/>
+                            <constraint firstAttribute="trailing" secondItem="khr-4r-xDL" secondAttribute="trailing" id="hln-AV-1ih"/>
+                            <constraint firstItem="khr-4r-xDL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jYp-Zi-nOa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jbm-Ax-NK5" secondAttribute="bottom" id="kx0-Kr-ryp"/>
+                            <constraint firstItem="HiL-e3-shV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="omZ-yH-HSh"/>
+                            <constraint firstItem="jbm-Ax-NK5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xvL-cX-9RB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="visualEffectView1" destination="jbm-Ax-NK5" id="sMG-1P-2M3"/>
+                        <outlet property="visualEffectView2" destination="khr-4r-xDL" id="qJ0-3a-tRZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="349"/>
+        </scene>
+    </scenes>
+</document>
