@@ -29,6 +29,8 @@ github "efremidze/VisualEffectView"
 
 ## Usage
 
+VisualEffectView is easy to use:
+
 ```swift
 import VisualEffectView
 
@@ -45,4 +47,4 @@ Contributions are totally welcome.
 
 ## License
 
-NumPad is available under the MIT license. See the LICENSE file for more info.
+VisualEffectView is available under the MIT license. See the LICENSE file for more info.
