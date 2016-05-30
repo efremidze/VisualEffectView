@@ -115,9 +115,9 @@
                                 <blurEffect style="light"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="vKA-bC-ILf"/>
-                                        <exclude reference="NL8-nk-37j"/>
                                         <exclude reference="I2T-64-Ue2"/>
+                                        <exclude reference="NL8-nk-37j"/>
+                                        <exclude reference="vKA-bC-ILf"/>
                                     </mask>
                                 </variation>
                             </visualEffectView>
@@ -175,12 +175,22 @@
                                 <blurEffect style="light"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Sdi-ej-kWd"/>
-                                        <exclude reference="QpI-kL-YGa"/>
                                         <exclude reference="8NT-IV-nZb"/>
+                                        <exclude reference="QpI-kL-YGa"/>
+                                        <exclude reference="Sdi-ej-kWd"/>
                                     </mask>
                                 </variation>
                             </visualEffectView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="B51-IX-ED1">
+                                <rect key="frame" x="198" y="40" width="204" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="9mV-vQ-c2o"/>
+                                    <constraint firstAttribute="height" constant="30" id="jgh-VN-kBW"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="iar-XM-VJ4"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -189,6 +199,7 @@
                             <constraint firstItem="JUF-Lu-MFo" firstAttribute="top" secondItem="khr-4r-xDL" secondAttribute="bottom" id="3J5-my-hOx"/>
                             <constraint firstItem="khr-4r-xDL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-80" id="3RQ-8c-8hI"/>
                             <constraint firstAttribute="trailing" secondItem="JUF-Lu-MFo" secondAttribute="trailing" id="447-Zs-9ez"/>
+                            <constraint firstItem="B51-IX-ED1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="4Te-CM-mY5"/>
                             <constraint firstItem="vhH-91-o5A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6Vm-N4-in7"/>
                             <constraint firstItem="bb4-by-Dfw" firstAttribute="height" secondItem="jbm-Ax-NK5" secondAttribute="height" id="AAN-LE-DxK"/>
                             <constraint firstItem="khr-4r-xDL" firstAttribute="width" secondItem="jbm-Ax-NK5" secondAttribute="width" id="BWg-4D-fne"/>
@@ -223,6 +234,7 @@
                             <constraint firstItem="JUF-Lu-MFo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="80" id="YTI-2d-45S"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="khr-4r-xDL" secondAttribute="bottom" id="ZBg-4E-RTU"/>
                             <constraint firstItem="vhH-91-o5A" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="80" id="bFB-k5-6or"/>
+                            <constraint firstItem="B51-IX-ED1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="brz-6j-uYh"/>
                             <constraint firstItem="khr-4r-xDL" firstAttribute="leading" secondItem="jbm-Ax-NK5" secondAttribute="trailing" id="co0-Bs-dNj"/>
                             <constraint firstItem="vhH-91-o5A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-80" id="d4c-xz-9VD"/>
                             <constraint firstItem="BGE-L2-fxb" firstAttribute="top" secondItem="khr-4r-xDL" secondAttribute="bottom" id="dge-FZ-6QO"/>

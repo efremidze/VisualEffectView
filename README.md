@@ -7,7 +7,7 @@
 
 UIVisualEffectView subclass with tint color.
 
-![Preview](preview.png)
+![Demo](demo.gif)
 
 ```
 $ pod try VisualEffectView
