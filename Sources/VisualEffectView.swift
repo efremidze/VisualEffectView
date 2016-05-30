@@ -10,44 +10,41 @@ import UIKit
 
 public class VisualEffectView: UIVisualEffectView {
     
-    let blurEffect: UIBlurEffect
+    let blurEffect: UIBlurEffect = (NSClassFromString("_UICustomBlurEffect") as! UIBlurEffect.Type).init()
     
     public var colorTint: UIColor {
-        get { return blurEffect.valueForKeyPath("colorTint") as! UIColor }
-        set { blurEffect.setValue(newValue, forKeyPath: "colorTint"); self.effect = blurEffect }
+        get { return _valueForKey("colorTint") as! UIColor }
+        set { _setValue(newValue, forKey: "colorTint") }
     }
     
     public var colorTintAlpha: CGFloat {
-        get { return blurEffect.valueForKeyPath("colorTintAlpha") as! CGFloat }
-        set { blurEffect.setValue(newValue, forKeyPath: "colorTintAlpha"); self.effect = blurEffect }
+        get { return _valueForKey("colorTintAlpha") as! CGFloat }
+        set { _setValue(newValue, forKey: "colorTintAlpha") }
     }
     
     public var blurRadius: CGFloat {
-        get { return blurEffect.valueForKeyPath("blurRadius") as! CGFloat }
-        set { blurEffect.setValue(newValue, forKeyPath: "blurRadius"); self.effect = blurEffect }
-    }
-    
-    public var saturationDeltaFactor: CGFloat {
-        get { return blurEffect.valueForKeyPath("saturationDeltaFactor") as! CGFloat }
-        set { blurEffect.setValue(newValue, forKeyPath: "saturationDeltaFactor"); self.effect = blurEffect }
+        get { return _valueForKey("blurRadius") as! CGFloat }
+        set { _setValue(newValue, forKey: "blurRadius") }
     }
     
     public var scale: CGFloat {
-        get { return blurEffect.valueForKeyPath("scale") as! CGFloat }
-        set { blurEffect.setValue(newValue, forKeyPath: "scale"); self.effect = blurEffect }
+        get { return _valueForKey("scale") as! CGFloat }
+        set { _setValue(newValue, forKey: "scale") }
     }
     
     // ["grayscaleTintLevel", "grayscaleTintAlpha", "lightenGrayscaleWithSourceOver", "colorTint", "colorTintAlpha", "colorBurnTintLevel", "colorBurnTintAlpha", "darkeningTintAlpha", "darkeningTintHue", "darkeningTintSaturation", "darkenWithSourceOver", "blurRadius", "saturationDeltaFactor", "scale", "zoom"]
     
-    public init() {
-        self.blurEffect = (NSClassFromString("_UICustomBlurEffect") as! UIBlurEffect.Type).init()
-        super.init(effect: self.blurEffect)
+}
+
+extension VisualEffectView {
+    
+    func _valueForKey(key: String) -> AnyObject? {
+        return blurEffect.valueForKeyPath(key)
     }
     
-    required public init?(coder aDecoder: NSCoder) {
-        self.blurEffect = (NSClassFromString("_UICustomBlurEffect") as! UIBlurEffect.Type).init()
-        super.init(coder: aDecoder)
-        self.effect = self.blurEffect
+    func _setValue(value: AnyObject?, forKey key: String) {
+        blurEffect.setValue(value, forKeyPath: key)
+        self.effect = blurEffect
     }
     
 }
