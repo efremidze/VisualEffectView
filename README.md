@@ -30,6 +30,10 @@ To install with [Carthage](https://github.com/Carthage/Carthage), simply add thi
 github "efremidze/VisualEffectView"
 ```
 
+### Manually
+1. Download and drop ```VisualEffectView.swift``` in your project.  
+2. Congratulations!  
+
 ## Usage
 
 Create a VisualEffectView using the empty initializer.
