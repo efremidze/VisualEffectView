@@ -27,6 +27,18 @@ To install with [Carthage](https://github.com/Carthage/Carthage), simply add thi
 github "efremidze/VisualEffectView"
 ```
 
+## Usage
+
+```swift
+import VisualEffectView
+
+let visualEffectView = VisualEffectView()
+visualEffectView.colorTint = .redColor()
+visualEffectView.colorTintAlpha = 0.5
+visualEffectView.blurRadius = 20
+addSubview(visualEffectView)
+```
+
 ## Contributions
 
 Contributions are totally welcome.
