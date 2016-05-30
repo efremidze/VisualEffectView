@@ -58,6 +58,6 @@ Contributions are totally welcome.
 
 VisualEffectView is available under the MIT license. See the LICENSE file for more info.
 
-## Thanks
+## Credits
 
 https://github.com/collinhundley/APCustomBlurView
