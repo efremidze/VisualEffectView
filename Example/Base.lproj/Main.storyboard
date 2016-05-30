@@ -182,11 +182,16 @@
                                 </variation>
                             </visualEffectView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="B51-IX-ED1">
-                                <rect key="frame" x="198" y="40" width="204" height="31"/>
+                                <rect key="frame" x="98" y="285" width="404" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="9mV-vQ-c2o"/>
                                     <constraint firstAttribute="height" constant="30" id="jgh-VN-kBW"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9mV-vQ-c2o"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="sliderChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="iar-XM-VJ4"/>
                                 </connections>
@@ -213,6 +218,7 @@
                             <constraint firstItem="JUF-Lu-MFo" firstAttribute="top" secondItem="bb4-by-Dfw" secondAttribute="bottom" id="JIz-sC-mMn"/>
                             <constraint firstItem="vhH-91-o5A" firstAttribute="height" secondItem="jbm-Ax-NK5" secondAttribute="height" id="JmQ-kA-2op"/>
                             <constraint firstItem="vhH-91-o5A" firstAttribute="top" secondItem="jbm-Ax-NK5" secondAttribute="bottom" id="K8O-rm-CaZ"/>
+                            <constraint firstAttribute="trailing" secondItem="B51-IX-ED1" secondAttribute="trailing" constant="100" id="KUy-Sf-sPm"/>
                             <constraint firstItem="BGE-L2-fxb" firstAttribute="width" secondItem="jbm-Ax-NK5" secondAttribute="width" id="L90-g2-hgw"/>
                             <constraint firstItem="jbm-Ax-NK5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LrC-bd-jrp"/>
                             <constraint firstItem="bb4-by-Dfw" firstAttribute="top" secondItem="BGE-L2-fxb" secondAttribute="bottom" id="M7Y-CW-8OT"/>
@@ -259,7 +265,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hlA-L3-wjc" secondAttribute="bottom" id="pqt-m4-rtd"/>
                             <constraint firstAttribute="trailing" secondItem="bb4-by-Dfw" secondAttribute="trailing" id="qSi-ua-QZb"/>
                             <constraint firstAttribute="trailing" secondItem="BGE-L2-fxb" secondAttribute="trailing" id="sCn-Dz-i7U"/>
+                            <constraint firstItem="B51-IX-ED1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="sWe-VL-MNI"/>
                             <constraint firstItem="ziy-FY-XgU" firstAttribute="top" secondItem="vhH-91-o5A" secondAttribute="bottom" id="t8h-eJ-crk"/>
+                            <constraint firstItem="B51-IX-ED1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uhr-sh-kNB"/>
                             <constraint firstItem="vhH-91-o5A" firstAttribute="top" secondItem="jbm-Ax-NK5" secondAttribute="bottom" id="vwx-M1-b7b"/>
                             <constraint firstItem="jbm-Ax-NK5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xvL-cX-9RB"/>
                             <constraint firstItem="ziy-FY-XgU" firstAttribute="width" secondItem="jbm-Ax-NK5" secondAttribute="width" id="zkU-qb-0SP"/>
@@ -287,6 +295,7 @@
                                 <exclude reference="VXC-bb-TY5"/>
                                 <exclude reference="hln-AV-1ih"/>
                                 <exclude reference="jYp-Zi-nOa"/>
+                                <exclude reference="4Te-CM-mY5"/>
                                 <exclude reference="3J5-my-hOx"/>
                                 <exclude reference="CLH-NO-m2c"/>
                                 <exclude reference="E7Q-m7-9DD"/>
