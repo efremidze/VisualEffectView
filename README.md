@@ -29,7 +29,7 @@ github "efremidze/VisualEffectView"
 
 ## Usage
 
-VisualEffectView is easy to use:
+VisualEffectView is a UIVisualEffectView subclass.
 
 ```swift
 import VisualEffectView
@@ -39,6 +39,14 @@ visualEffectView.colorTint = .redColor()
 visualEffectView.colorTintAlpha = 0.5
 visualEffectView.blurRadius = 20
 addSubview(visualEffectView)
+```
+
+### Customization
+```swift
+var colorTint: UIColor // tint color
+var colorTintAlpha: CGFloat // tint color alpha
+var blurRadius: CGFloat // blur radius
+var scale: CGFloat // scale factor
 ```
 
 ## Contributions
