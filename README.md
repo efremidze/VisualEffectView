@@ -7,7 +7,10 @@
 
 UIVisualEffectView subclass with tint color.
 
-![Preview](preview.png)
+##### Disclaimer
+UIVisualEffectView utilizes a private UIKit API to do its magic. It is intended for **internal use only.** Use caution, submitting this code to the App Store adds the risk of being rejected!
+
+![Demo](demo.gif)
 
 ```
 $ pod try VisualEffectView
@@ -29,19 +32,17 @@ github "efremidze/VisualEffectView"
 
 ## Usage
 
-VisualEffectView is a UIVisualEffectView subclass.
+Create a VisualEffectView using the empty initializer.
 
 ```swift
 import VisualEffectView
 
 let visualEffectView = VisualEffectView()
-visualEffectView.colorTint = .redColor()
-visualEffectView.colorTintAlpha = 0.5
-visualEffectView.blurRadius = 20
 addSubview(visualEffectView)
 ```
 
 ### Customization
+
 ```swift
 var colorTint: UIColor // tint color
 var colorTintAlpha: CGFloat // tint color alpha

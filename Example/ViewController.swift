@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var visualEffectView1: VisualEffectView! {
         didSet {
-            visualEffectView1.tint(.greenColor(), blurRadius: 5)
+            visualEffectView1.tint(.greenColor(), blurRadius: 10)
         }
     }
     
@@ -31,25 +31,25 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var visualEffectView3: VisualEffectView! {
         didSet {
-            visualEffectView3.tint(.redColor(), blurRadius: 15)
+            visualEffectView3.tint(.redColor(), blurRadius: 10)
         }
     }
     
     @IBOutlet weak var visualEffectView4: VisualEffectView! {
         didSet {
-            visualEffectView4.tint(.yellowColor(), blurRadius: 20)
+            visualEffectView4.tint(.yellowColor(), blurRadius: 10)
         }
     }
     
     @IBOutlet weak var visualEffectView5: VisualEffectView! {
         didSet {
-            visualEffectView5.tint(.cyanColor(), blurRadius: 20)
+            visualEffectView5.tint(.cyanColor(), blurRadius: 10)
         }
     }
     
     @IBOutlet weak var visualEffectView6: VisualEffectView! {
         didSet {
-            visualEffectView6.tint(.magentaColor(), blurRadius: 15)
+            visualEffectView6.tint(.magentaColor(), blurRadius: 10)
         }
     }
     
@@ -61,8 +61,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var visualEffectView8: VisualEffectView! {
         didSet {
-            visualEffectView8.tint(.purpleColor(), blurRadius: 5)
+            visualEffectView8.tint(.purpleColor(), blurRadius: 10)
         }
+    }
+    
+    @IBAction func sliderChange(slider: UISlider) {
+        let views = [visualEffectView1, visualEffectView2, visualEffectView3, visualEffectView4, visualEffectView5, visualEffectView6, visualEffectView7, visualEffectView8]
+        views.forEach { $0.blurRadius = CGFloat(slider.value) * 20 }
     }
     
 }
