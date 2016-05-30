@@ -27,6 +27,11 @@ public class VisualEffectView: UIVisualEffectView {
         set { _setValue(newValue, forKey: "blurRadius") }
     }
     
+    public var scale: CGFloat {
+        get { return _valueForKey("scale") as! CGFloat }
+        set { _setValue(newValue, forKey: "scale") }
+    }
+    
     // ["grayscaleTintLevel", "grayscaleTintAlpha", "lightenGrayscaleWithSourceOver", "colorTint", "colorTintAlpha", "colorBurnTintLevel", "colorBurnTintAlpha", "darkeningTintAlpha", "darkeningTintHue", "darkeningTintSaturation", "darkenWithSourceOver", "blurRadius", "saturationDeltaFactor", "scale", "zoom"]
     
 }
