@@ -182,7 +182,7 @@
                                 </variation>
                             </visualEffectView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="B51-IX-ED1">
-                                <rect key="frame" x="98" y="285" width="404" height="31"/>
+                                <rect key="frame" x="98" y="385" width="404" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="9mV-vQ-c2o"/>
                                     <constraint firstAttribute="height" constant="30" id="jgh-VN-kBW"/>
@@ -267,7 +267,7 @@
                             <constraint firstAttribute="trailing" secondItem="BGE-L2-fxb" secondAttribute="trailing" id="sCn-Dz-i7U"/>
                             <constraint firstItem="B51-IX-ED1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="sWe-VL-MNI"/>
                             <constraint firstItem="ziy-FY-XgU" firstAttribute="top" secondItem="vhH-91-o5A" secondAttribute="bottom" id="t8h-eJ-crk"/>
-                            <constraint firstItem="B51-IX-ED1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uhr-sh-kNB"/>
+                            <constraint firstItem="B51-IX-ED1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="uhr-sh-kNB"/>
                             <constraint firstItem="vhH-91-o5A" firstAttribute="top" secondItem="jbm-Ax-NK5" secondAttribute="bottom" id="vwx-M1-b7b"/>
                             <constraint firstItem="jbm-Ax-NK5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xvL-cX-9RB"/>
                             <constraint firstItem="ziy-FY-XgU" firstAttribute="width" secondItem="jbm-Ax-NK5" secondAttribute="width" id="zkU-qb-0SP"/>
