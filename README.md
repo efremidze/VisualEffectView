@@ -7,9 +7,6 @@
 
 UIVisualEffectView subclass with tint color.
 
-##### Disclaimer
-VisualEffectView utilizes a private UIKit API to do its magic. It is intended for **internal use only.** Use caution, submitting this code to the App Store adds the risk of being rejected!
-
 ![Demo](demo.gif)
 
 ```
@@ -61,6 +58,10 @@ Contributions are totally welcome.
 ## License
 
 VisualEffectView is available under the MIT license. See the LICENSE file for more info.
+
+## Disclaimer
+
+VisualEffectView utilizes a private UIKit API to do its magic. Use caution, submitting this code to the App Store adds the risk of being rejected!
 
 ## Credits
 
