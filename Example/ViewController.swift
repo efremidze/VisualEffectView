@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView! {
         didSet {
-            imageView.image = UIImage(data: NSData(contentsOfURL: NSURL(string: "https://upload.wikimedia.org/wikipedia/en/d/dc/IOS_9_Homescreen.png")!)!)
+            imageView.image = UIImage(data: NSData(contentsOfURL: NSURL(string: "http://iphonewalls.net/wp-content/uploads/2014/09/Oil%20Painting%20Colorful%20Strokes%20iPhone%206%20Plus%20HD%20Wallpaper.jpg")!)!)
+            imageView.contentMode = .ScaleAspectFill
         }
     }
     
