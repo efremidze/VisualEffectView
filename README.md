@@ -33,14 +33,24 @@ github "efremidze/VisualEffectView"
 
 ## Usage
 
-Create a VisualEffectView using the empty initializer.
+Use the VisualEffectView like any UIView.
 
 ```swift
 import VisualEffectView
 
-let visualEffectView = VisualEffectView()
+let visualEffectView = VisualEffectView(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
+
+// Configure the view with a tint color, blur radius, etc. For example:
+//
+// visualEffectView.colorTint = .redColor()
+// visualEffectView.colorTintAlpha = 0.2
+// visualEffectView.blurRadius = 10
+// visualEffectView.scale = 1
+
 addSubview(visualEffectView)
 ```
+
+For more examples, take a look at the example project.
 
 ### Customization
 
@@ -50,6 +60,10 @@ var colorTintAlpha: CGFloat // tint color alpha
 var blurRadius: CGFloat // blur radius
 var scale: CGFloat // scale factor
 ```
+
+### Storyboard Support
+
+Works great with storyboards and xibs.
 
 ## Contributions
 
