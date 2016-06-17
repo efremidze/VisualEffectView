@@ -40,7 +40,7 @@ import VisualEffectView
 
 let visualEffectView = VisualEffectView(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
 
-// Configure the view with a tint color, blur radius, etc. For example:
+// Configure the view with tint color, blur radius, etc. For example:
 //
 // visualEffectView.colorTint = .redColor()
 // visualEffectView.colorTintAlpha = 0.2
