@@ -1,4 +1,4 @@
-# VisualEffectView
+![VisualEffectView](Images/cover.png)
 
 [![Version](https://img.shields.io/cocoapods/v/VisualEffectView.svg?style=flat)](http://cocoapods.org/pods/VisualEffectView)
 [![CI Status](http://img.shields.io/travis/efremidze/VisualEffectView.svg?style=flat)](https://travis-ci.org/efremidze/VisualEffectView)
@@ -6,7 +6,7 @@
 
 [UIVisualEffectView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/) subclass with tint color. Applies a blurring effect to the content layered behind using [UIBlurEffect](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBlurEffect_Ref/index.html#//apple_ref/occ/cl/UIBlurEffect).
 
-![Demo](demo.gif)
+![Demo](Images/demo.gif)
 
 ```
 $ pod try VisualEffectView
