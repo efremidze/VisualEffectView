@@ -42,11 +42,11 @@ public class VisualEffectView: UIVisualEffectView {
 
 extension VisualEffectView {
     
-    func _valueForKey(key: String) -> AnyObject? {
-        return blurEffect.valueForKeyPath(key)
+    func _valueForKey(_ key: String) -> AnyObject? {
+        return blurEffect.value(forKeyPath: key)
     }
     
-    func _setValue(value: AnyObject?, forKey key: String) {
+    func _setValue(_ value: AnyObject?, forKey key: String) {
         blurEffect.setValue(value, forKeyPath: key)
         self.effect = blurEffect
     }
