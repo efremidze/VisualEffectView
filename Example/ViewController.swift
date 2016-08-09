@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView! {
         didSet {
-            imageView.image = UIImage(data: try! Data (contentsOf: URL(string: "http://iphonewalls.net/wp-content/uploads/2014/09/Oil%20Painting%20Colorful%20Strokes%20iPhone%206%20Plus%20HD%20Wallpaper.jpg")!))
+            imageView.image = UIImage(data: try! Data(contentsOf: URL(string: "http://iphonewalls.net/wp-content/uploads/2014/09/Oil%20Painting%20Colorful%20Strokes%20iPhone%206%20Plus%20HD%20Wallpaper.jpg")!))
             imageView.contentMode = .scaleAspectFill
         }
     }
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func sliderChange(slider: UISlider) {
+    @IBAction func sliderChange(_ slider: UISlider) {
         let views = [visualEffectView1, visualEffectView2, visualEffectView3, visualEffectView4, visualEffectView5, visualEffectView6, visualEffectView7, visualEffectView8]
         views.forEach { $0?.blurRadius = CGFloat(slider.value) * 20 }
     }
