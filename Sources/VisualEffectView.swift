@@ -21,19 +21,19 @@ public class VisualEffectView: UIVisualEffectView {
     /// Tint color alpha.
     public var colorTintAlpha: CGFloat {
         get { return _valueForKey("colorTintAlpha") as! CGFloat }
-        set { _setValue(newValue, forKey: "colorTintAlpha") }
+        set { _setValue(newValue as AnyObject?, forKey: "colorTintAlpha") }
     }
     
     /// Blur radius.
     public var blurRadius: CGFloat {
         get { return _valueForKey("blurRadius") as! CGFloat }
-        set { _setValue(newValue, forKey: "blurRadius") }
+        set { _setValue(newValue as AnyObject?, forKey: "blurRadius") }
     }
     
     /// Scale factor.
     public var scale: CGFloat {
         get { return _valueForKey("scale") as! CGFloat }
-        set { _setValue(newValue, forKey: "scale") }
+        set { _setValue(newValue as AnyObject?, forKey: "scale") }
     }
     
     // ["grayscaleTintLevel", "grayscaleTintAlpha", "lightenGrayscaleWithSourceOver", "colorTint", "colorTintAlpha", "colorBurnTintLevel", "colorBurnTintAlpha", "darkeningTintAlpha", "darkeningTintHue", "darkeningTintSaturation", "darkenWithSourceOver", "blurRadius", "saturationDeltaFactor", "scale", "zoom"]
@@ -43,7 +43,7 @@ public class VisualEffectView: UIVisualEffectView {
 extension VisualEffectView {
     
     func _valueForKey(_ key: String) -> AnyObject? {
-        return blurEffect.value(forKeyPath: key)
+        return blurEffect.value(forKeyPath: key) as AnyObject?
     }
     
     func _setValue(_ value: AnyObject?, forKey key: String) {
