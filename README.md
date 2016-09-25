@@ -30,7 +30,13 @@ github "efremidze/VisualEffectView"
 
 ### Manually
 1. Download and drop ```VisualEffectView.swift``` in your project.  
-2. Congratulations!  
+2. Congratulations!
+
+## Requirements
+
+- iOS 8.0+ / Mac OS X 10.9+ / tvOS 9.0+ / watchOS 2.0+
+- Xcode 8.0+
+- Swift 2.3
 
 ## Usage
 

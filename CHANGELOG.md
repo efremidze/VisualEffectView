@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 1.0.5](https://github.com/efremidze/VisualEffectView/releases/tag/1.0.5)
+Released on 2016-09-15
+
+- Updated to Swift 2.3
+
 ## [Version 1.0.4](https://github.com/efremidze/VisualEffectView/releases/tag/1.0.4)
 Released on 2016-06-26
 
