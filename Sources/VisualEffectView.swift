@@ -8,31 +8,31 @@
 
 import UIKit
 
-public class VisualEffectView: UIVisualEffectView {
+open class VisualEffectView: UIVisualEffectView {
     
     let blurEffect = (NSClassFromString("_UICustomBlurEffect") as! UIBlurEffect.Type).init()
     
     /// Tint color.
-    public var colorTint: UIColor {
-        get { return _valueForKey("colorTint") as! UIColor }
+    open var colorTint: UIColor {
+        get { return _value(forKey: "colorTint") as! UIColor }
         set { _setValue(newValue, forKey: "colorTint") }
     }
     
     /// Tint color alpha.
-    public var colorTintAlpha: CGFloat {
-        get { return _valueForKey("colorTintAlpha") as! CGFloat }
+    open var colorTintAlpha: CGFloat {
+        get { return _value(forKey: "colorTintAlpha") as! CGFloat }
         set { _setValue(newValue, forKey: "colorTintAlpha") }
     }
     
     /// Blur radius.
-    public var blurRadius: CGFloat {
-        get { return _valueForKey("blurRadius") as! CGFloat }
+    open var blurRadius: CGFloat {
+        get { return _value(forKey: "blurRadius") as! CGFloat }
         set { _setValue(newValue, forKey: "blurRadius") }
     }
     
     /// Scale factor.
-    public var scale: CGFloat {
-        get { return _valueForKey("scale") as! CGFloat }
+    open var scale: CGFloat {
+        get { return _value(forKey: "scale") as! CGFloat }
         set { _setValue(newValue, forKey: "scale") }
     }
     
@@ -42,11 +42,11 @@ public class VisualEffectView: UIVisualEffectView {
 
 extension VisualEffectView {
     
-    func _valueForKey(key: String) -> AnyObject? {
-        return blurEffect.valueForKeyPath(key)
+    func _value(forKey key: String) -> Any? {
+        return blurEffect.value(forKeyPath: key)
     }
     
-    func _setValue(value: AnyObject?, forKey key: String) {
+    func _setValue(_ value: Any?, forKey key: String) {
         blurEffect.setValue(value, forKeyPath: key)
         self.effect = blurEffect
     }
