@@ -20,49 +20,49 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var visualEffectView1: VisualEffectView! {
         didSet {
-            visualEffectView1.tint(color: .green, blurRadius: 10)
+            visualEffectView1.tint(.green, blurRadius: 10)
         }
     }
     
     @IBOutlet weak var visualEffectView2: VisualEffectView! {
         didSet {
-            visualEffectView2.tint(color: .blue, blurRadius: 10)
+            visualEffectView2.tint(.blue, blurRadius: 10)
         }
     }
     
     @IBOutlet weak var visualEffectView3: VisualEffectView! {
         didSet {
-            visualEffectView3.tint(color: .red, blurRadius: 10)
+            visualEffectView3.tint(.red, blurRadius: 10)
         }
     }
     
     @IBOutlet weak var visualEffectView4: VisualEffectView! {
         didSet {
-            visualEffectView4.tint(color: .yellow, blurRadius: 10)
+            visualEffectView4.tint(.yellow, blurRadius: 10)
         }
     }
     
     @IBOutlet weak var visualEffectView5: VisualEffectView! {
         didSet {
-            visualEffectView5.tint(color: .cyan, blurRadius: 10)
+            visualEffectView5.tint(.cyan, blurRadius: 10)
         }
     }
     
     @IBOutlet weak var visualEffectView6: VisualEffectView! {
         didSet {
-            visualEffectView6.tint(color: .magenta, blurRadius: 10)
+            visualEffectView6.tint(.magenta, blurRadius: 10)
         }
     }
     
     @IBOutlet weak var visualEffectView7: VisualEffectView! {
         didSet {
-            visualEffectView7.tint(color: .orange, blurRadius: 10)
+            visualEffectView7.tint(.orange, blurRadius: 10)
         }
     }
     
     @IBOutlet weak var visualEffectView8: VisualEffectView! {
         didSet {
-            visualEffectView8.tint(color: .purple, blurRadius: 10)
+            visualEffectView8.tint(.purple, blurRadius: 10)
         }
     }
     
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
 
 extension VisualEffectView {
     
-    func tint(color: UIColor, blurRadius: CGFloat) {
+    func tint(_ color: UIColor, blurRadius: CGFloat) {
         self.colorTint = color
         self.colorTintAlpha = 0.2
         self.blurRadius = blurRadius
