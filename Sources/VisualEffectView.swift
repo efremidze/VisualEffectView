@@ -8,30 +8,30 @@
 
 import UIKit
 
-open class VisualEffectView: UIVisualEffectView {
+public class VisualEffectView: UIVisualEffectView {
     
     let blurEffect = (NSClassFromString("_UICustomBlurEffect") as! UIBlurEffect.Type).init()
     
     /// Tint color.
-    open var colorTint: UIColor {
+    public var colorTint: UIColor {
         get { return _value(forKey: "colorTint") as! UIColor }
         set { _setValue(newValue, forKey: "colorTint") }
     }
     
     /// Tint color alpha.
-    open var colorTintAlpha: CGFloat {
+    public var colorTintAlpha: CGFloat {
         get { return _value(forKey: "colorTintAlpha") as! CGFloat }
         set { _setValue(newValue, forKey: "colorTintAlpha") }
     }
     
     /// Blur radius.
-    open var blurRadius: CGFloat {
+    public var blurRadius: CGFloat {
         get { return _value(forKey: "blurRadius") as! CGFloat }
         set { _setValue(newValue, forKey: "blurRadius") }
     }
     
     /// Scale factor.
-    open var scale: CGFloat {
+    public var scale: CGFloat {
         get { return _value(forKey: "scale") as! CGFloat }
         set { _setValue(newValue, forKey: "scale") }
     }
