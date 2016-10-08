@@ -33,7 +33,8 @@ github "efremidze/VisualEffectView"
 ## Requirements
 
 - iOS 8.0+ / macOS 10.10+ / tvOS 9.0+ / watchOS 2.0+
-- Swift 3 (VisualEffectView 2.x), Swift 2.3 (VisualEffectView 1.x)
+- Swift 2.3 (VisualEffectView 1.x)
+- [Swift 3](https://github.com/efremidze/VisualEffectView/tree/swift3.0)
 
 ## Usage
 
