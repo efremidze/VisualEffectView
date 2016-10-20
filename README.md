@@ -1,7 +1,7 @@
 [UIVisualEffectView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/) subclass with tint color. Applies a blurring effect to the content layered behind using [UIBlurEffect](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBlurEffect_Ref/index.html#//apple_ref/occ/cl/UIBlurEffect).
 
 [![Version](https://img.shields.io/cocoapods/v/VisualEffectView.svg?style=flat)](http://cocoapods.org/pods/VisualEffectView)
-[![Language](https://img.shields.io/badge/Swift-2.3-orange.svg?style=flat)](https://swift.org)
+[![Language](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://swift.org)
 [![CI Status](http://img.shields.io/travis/efremidze/VisualEffectView.svg?style=flat)](https://travis-ci.org/efremidze/VisualEffectView)
 [![codebeat badge](https://codebeat.co/badges/333beeda-5948-42f3-8775-0e3626408a82)](https://codebeat.co/projects/github-com-efremidze-visualeffectview)
 
@@ -16,8 +16,7 @@ $ pod try VisualEffectView
 ## Requirements
 
 - iOS 8.0+ / macOS 10.10+ / tvOS 9.0+ / watchOS 2.0+
-- Swift 2.3 (VisualEffectView 1.x)
-- [Swift 3.0](https://github.com/efremidze/VisualEffectView/tree/swift3.0)
+- Swift 3.0 (VisualEffectView 2.x), Swift 2.3 (VisualEffectView 1.x)
 
 ## Installation
 ###CocoaPods
