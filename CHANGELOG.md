@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 2.0.2](https://github.com/efremidze/VisualEffectView/releases/tag/2.0.2)
+Released on 2016-10-28
+
+- Fixed minimum deployment target
+
 ## [Version 2.0.1](https://github.com/efremidze/VisualEffectView/releases/tag/2.0.1)
 Released on 2016-10-20
 
