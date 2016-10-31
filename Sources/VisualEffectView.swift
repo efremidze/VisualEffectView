@@ -8,9 +8,13 @@
 
 import UIKit
 
+/// VisualEffectView is a dynamic background blur view.
 public class VisualEffectView: UIVisualEffectView {
     
-    let blurEffect = (NSClassFromString("_UICustomBlurEffect") as! UIBlurEffect.Type).init()
+    /// Returns the instance of UIBlurEffect.
+    private let blurEffect = (NSClassFromString("_UICustomBlurEffect") as! UIBlurEffect.Type).init()
+    
+    // MARK: -
     
     /// Tint color.
     public var colorTint: UIColor {
@@ -36,19 +40,19 @@ public class VisualEffectView: UIVisualEffectView {
         set { _setValue(newValue, forKey: "scale") }
     }
     
-    // ["grayscaleTintLevel", "grayscaleTintAlpha", "lightenGrayscaleWithSourceOver", "colorTint", "colorTintAlpha", "colorBurnTintLevel", "colorBurnTintAlpha", "darkeningTintAlpha", "darkeningTintHue", "darkeningTintSaturation", "darkenWithSourceOver", "blurRadius", "saturationDeltaFactor", "scale", "zoom"]
+    // MARK: -
     
-}
-
-extension VisualEffectView {
-    
-    func _value(forKey key: String) -> Any? {
+    /// Returns the value for the key on the blurEffect.
+    private func _value(forKey key: String) -> Any? {
         return blurEffect.value(forKeyPath: key)
     }
     
-    func _setValue(_ value: Any?, forKey key: String) {
+    /// Sets the value for the key on the blurEffect.
+    private func _setValue(_ value: Any?, forKey key: String) {
         blurEffect.setValue(value, forKeyPath: key)
         self.effect = blurEffect
     }
     
 }
+
+// ["grayscaleTintLevel", "grayscaleTintAlpha", "lightenGrayscaleWithSourceOver", "colorTint", "colorTintAlpha", "colorBurnTintLevel", "colorBurnTintAlpha", "darkeningTintAlpha", "darkeningTintHue", "darkeningTintSaturation", "darkenWithSourceOver", "blurRadius", "saturationDeltaFactor", "scale", "zoom"]
