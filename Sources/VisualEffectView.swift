@@ -9,7 +9,7 @@
 import UIKit
 
 /// VisualEffectView is a dynamic background blur view.
-public class VisualEffectView: UIVisualEffectView {
+open class VisualEffectView: UIVisualEffectView {
     
     /// Returns the instance of UIBlurEffect.
     private let blurEffect = (NSClassFromString("_UICustomBlurEffect") as! UIBlurEffect.Type).init()
