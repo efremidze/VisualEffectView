@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 2.0.3](https://github.com/efremidze/VisualEffectView/releases/tag/2.0.3)
+Released on 2016-11-29
+
+- Fixed scale
+
 ## [Version 2.0.2](https://github.com/efremidze/VisualEffectView/releases/tag/2.0.2)
 Released on 2016-10-28
 

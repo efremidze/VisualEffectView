@@ -7,12 +7,8 @@
 #
 
 Pod::Spec.new do |s|
-
-    `xcodebuild -project VisualEffectView.xcodeproj -showBuildSettings` =~ /CURRENT_PROJECT_VERSION = ((\d\.)+\d)/
-    abort("No version detected") if $1.nil?
-    s.version = $1
-
     s.name             = "VisualEffectView"
+    s.version          = "2.0.3"
     s.license          = 'MIT'
     s.homepage         = "https://github.com/efremidze/VisualEffectView"
     s.author           = { "Lasha Efremidze" => "efremidzel@hotmail.com" }
