@@ -79,7 +79,6 @@ extension VisualEffectView {
         self.colorTint = color
         self.colorTintAlpha = 0.2
         self.blurRadius = blurRadius
-        self.scale = 1
     }
     
 }
