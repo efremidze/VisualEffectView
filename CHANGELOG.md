@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 2.0.4](https://github.com/efremidze/VisualEffectView/releases/tag/2.0.4)
+Released on 2016-11-30
+
+- Fixed missing CFBundleVersion
+
 ## [Version 2.0.3](https://github.com/efremidze/VisualEffectView/releases/tag/2.0.3)
 Released on 2016-11-29
 
