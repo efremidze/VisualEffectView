@@ -58,10 +58,10 @@ For more examples, take a look at the example project.
 ### Customization
 
 ```swift
-var colorTint: UIColor // tint color
-var colorTintAlpha: CGFloat // tint color alpha
-var blurRadius: CGFloat // blur radius
-var scale: CGFloat // scale factor
+var colorTint: UIColor // tint color. default is nil
+var colorTintAlpha: CGFloat // tint color alpha. default is 0
+var blurRadius: CGFloat // blur radius. default is 0
+var scale: CGFloat // scale factor. default is 1
 ```
 
 ### Storyboard Support
