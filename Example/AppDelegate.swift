@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Example
 //
-//  Created by Lasha Efremidze on 5/28/16.
+//  Created by Lasha Efremidze on 12/19/16.
 //  Copyright © 2016 Lasha Efremidze. All rights reserved.
 //
 

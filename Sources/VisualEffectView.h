@@ -2,7 +2,7 @@
 //  VisualEffectView.h
 //  VisualEffectView
 //
-//  Created by Lasha Efremidze on 5/26/16.
+//  Created by Lasha Efremidze on 12/19/16.
 //  Copyright © 2016 Lasha Efremidze. All rights reserved.
 //
 
