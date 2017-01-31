@@ -14,6 +14,7 @@
 		8B3244171E07D7D900712FEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B3244161E07D7D900712FEA /* Assets.xcassets */; };
 		8B32441A1E07D7D900712FEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B3244181E07D7D900712FEA /* LaunchScreen.storyboard */; };
 		8B3DFCE01E07D8F5009EAFA2 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3DFCDF1E07D8F5009EAFA2 /* VisualEffectView.swift */; };
+		8BEE35131E410CBC00A09EEF /* VisualEffectView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3243FE1E07D7CB00712FEA /* VisualEffectView.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BEE35131E410CBC00A09EEF /* VisualEffectView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
