@@ -16,14 +16,14 @@ $ pod try VisualEffectView
 - Swift 3.1 (VisualEffectView 2.x), Swift 2.3 (VisualEffectView 1.x)
 
 ## Installation
-###CocoaPods
+### CocoaPods
 To install with [CocoaPods](http://cocoapods.org/), simply add this in your `Podfile`:
 ```ruby
 use_frameworks!
 pod "VisualEffectView"
 ```
 
-###Carthage
+### Carthage
 To install with [Carthage](https://github.com/Carthage/Carthage), simply add this in your `Cartfile`:
 ```ruby
 github "efremidze/VisualEffectView"
