@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 2.0.6](https://github.com/efremidze/VisualEffectView/releases/tag/2.0.6)
+Released on 2016-03-28
+
+- Bug fixes
+
 ## [Version 2.0.4](https://github.com/efremidze/VisualEffectView/releases/tag/2.0.4)
 Released on 2016-11-30
 
