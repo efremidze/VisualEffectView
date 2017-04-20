@@ -73,6 +73,16 @@ Works great with storyboards and xibs.
 
 VisualEffectView utilizes a private UIKit API to do its magic. Use caution, submitting this code to the App Store adds the risk of being rejected!
 
+## Communication
+
+- If you **found a bug**, open an issue.
+- If you **have a feature request**, open an issue.
+- If you **want to contribute**, submit a pull request.
+
 ## Credits
 
 https://github.com/collinhundley/APCustomBlurView
+
+## License
+
+VisualEffectView is available under the MIT license. See the LICENSE file for more info.
