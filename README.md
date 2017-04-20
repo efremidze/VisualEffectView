@@ -1,3 +1,5 @@
+# VisualEffectView
+
 [UIVisualEffectView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/) subclass with tint color. Applies a blurring effect to the content layered behind using [UIBlurEffect](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBlurEffect_Ref/index.html#//apple_ref/occ/cl/UIBlurEffect).
 
 [![Language](https://img.shields.io/badge/Swift-3.1-orange.svg?style=flat)](https://swift.org)
