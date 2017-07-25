@@ -8,12 +8,12 @@
 
 Pod::Spec.new do |s|
     s.name             = "VisualEffectView"
-    s.version          = "2.0.6"
+    s.version          = "2.0.7"
     s.license          = 'MIT'
     s.homepage         = "https://github.com/efremidze/VisualEffectView"
     s.author           = { "Lasha Efremidze" => "efremidzel@hotmail.com" }
     s.summary          = "Dynamic blur background view with tint color (UIVisualEffectView subclass)"
     s.source           = { :git => 'https://github.com/efremidze/VisualEffectView.git', :tag => s.version }
     s.source_files     = "Sources/*.swift"
-    s.ios.deployment_target = '8.0'
+    s.ios.deployment_target = '9.0'
 end
