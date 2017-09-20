@@ -16,7 +16,7 @@ $ pod try VisualEffectView
 ## Requirements
 
 - iOS 9.0+
-- Swift 3.1 (VisualEffectView 2.x), Swift 2.3 (VisualEffectView 1.x)
+- Swift 4 (VisualEffectView 3.x), Swift 3 (VisualEffectView 2.x), Swift 2 (VisualEffectView 1.x)
 
 ## Installation
 ### CocoaPods
