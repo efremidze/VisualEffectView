@@ -1,6 +1,6 @@
 # VisualEffectView
 
-[UIVisualEffectView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/) subclass with tint color. Applies a blurring effect to the content layered behind using [UIBlurEffect](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBlurEffect_Ref/index.html#//apple_ref/occ/cl/UIBlurEffect).
+**VisualEffectView** is a blur effect library with tint color support. This library uses the [UIVisualEffectView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/) to generate the blur.
 
 [![Language](https://img.shields.io/badge/Swift-4-orange.svg?style=flat)](https://swift.org)
 [![Version](https://img.shields.io/cocoapods/v/VisualEffectView.svg?style=flat)](http://cocoapods.org/pods/VisualEffectView)
@@ -18,7 +18,43 @@ $ pod try VisualEffectView
 - iOS 9.0+
 - Swift 4 (VisualEffectView 3.x), Swift 3 (VisualEffectView 2.x), Swift 2 (VisualEffectView 1.x)
 
+## Usage
+
+Add an instance of VisualEffectView to your view.
+
+```swift
+import VisualEffectView
+
+let visualEffectView = VisualEffectView(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
+
+// Configure the view with tint color, blur radius, etc
+visualEffectView.colorTint = .redColor()
+visualEffectView.colorTintAlpha = 0.2
+visualEffectView.blurRadius = 10
+visualEffectView.scale = 1
+
+addSubview(visualEffectView)
+```
+
+Depending on the desired effect, the effect may affect content layered behind the view or content added to the visual effect view’s contentView. After you add the visual effect view to the view hierarchy, add any subviews to the contentView property of the visual effect view. Do not add subviews directly to the visual effect view itself. Refer to the [UIVisualEffectView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/) for more info.
+
+For more examples, take a look at the example project.
+
+### Customization
+
+```swift
+var colorTint: UIColor // tint color. default is nil
+var colorTintAlpha: CGFloat // tint color alpha. default is 0
+var blurRadius: CGFloat // blur radius. default is 0
+var scale: CGFloat // scale factor. default is 1
+```
+
+### Storyboard Support
+
+Works great with storyboards and xibs.
+
 ## Installation
+
 ### CocoaPods
 To install with [CocoaPods](http://cocoapods.org/), simply add this in your `Podfile`:
 ```ruby
@@ -35,40 +71,6 @@ github "efremidze/VisualEffectView"
 ### Manually
 1. Download and drop ```VisualEffectView.swift``` in your project.  
 2. Congratulations!
-
-## Usage
-
-Use the VisualEffectView like any UIView.
-
-```swift
-import VisualEffectView
-
-let visualEffectView = VisualEffectView(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
-
-// Configure the view with tint color, blur radius, etc. For example:
-//
-// visualEffectView.colorTint = .redColor()
-// visualEffectView.colorTintAlpha = 0.2
-// visualEffectView.blurRadius = 10
-// visualEffectView.scale = 1
-
-addSubview(visualEffectView)
-```
-
-For more examples, take a look at the example project.
-
-### Customization
-
-```swift
-var colorTint: UIColor // tint color. default is nil
-var colorTintAlpha: CGFloat // tint color alpha. default is 0
-var blurRadius: CGFloat // blur radius. default is 0
-var scale: CGFloat // scale factor. default is 1
-```
-
-### Storyboard Support
-
-Works great with storyboards and xibs.
 
 ## Disclaimer
 
