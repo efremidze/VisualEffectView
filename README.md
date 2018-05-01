@@ -73,15 +73,15 @@ github "efremidze/VisualEffectView"
 1. Download and drop ```VisualEffectView.swift``` in your project.  
 2. Congratulations!
 
-## Disclaimer
-
-VisualEffectView utilizes a private UIKit API to do its magic. Use caution, submitting this code to the App Store adds the risk of being rejected!
-
 ## Communication
 
 - If you **found a bug**, open an issue.
 - If you **have a feature request**, open an issue.
 - If you **want to contribute**, submit a pull request.
+
+## Disclaimer
+
+VisualEffectView utilizes a private UIKit API to do its magic. Use caution, submitting this code to the App Store adds the risk of being rejected!
 
 ## Credits
 
