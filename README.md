@@ -1,11 +1,10 @@
 # VisualEffectView
 
 [![Build Status](https://travis-ci.org/efremidze/VisualEffectView.svg?branch=master)](https://travis-ci.org/efremidze/VisualEffectView)
-[![Language](https://img.shields.io/badge/Swift-4-orange.svg?style=flat)](https://swift.org)
 [![Version](https://img.shields.io/cocoapods/v/VisualEffectView.svg?style=flat)](http://cocoapods.org/pods/VisualEffectView)
-[![codebeat badge](https://codebeat.co/badges/333beeda-5948-42f3-8775-0e3626408a82)](https://codebeat.co/projects/github-com-efremidze-visualeffectview)
+[![License](https://img.shields.io/cocoapods/l/VisualEffectView.svg?style=flat)](http://cocoapods.org/pods/VisualEffectView)
+[![Platform](https://img.shields.io/cocoapods/p/VisualEffectView.svg?style=flat)](http://cocoapods.org/pods/VisualEffectView)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Build Status](https://travis-ci.org/freeCodeCamp/how-to-contribute-to-open-source.svg?branch=master)](https://travis-ci.org/freeCodeCamp/how-to-contribute-to-open-source)
 
 **VisualEffectView** is a blur effect library with tint color support. This library uses the [UIVisualEffectView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/) to generate the blur.
 
