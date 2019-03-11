@@ -19,6 +19,7 @@
 		F449249E206F2D5100117F6B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F449249B206F2D5100117F6B /* README.md */; };
 		F449249F206F2D5100117F6B /* VisualEffectView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F449249C206F2D5100117F6B /* VisualEffectView.podspec */; };
 		F44924A0206F2D5100117F6B /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = F449249D206F2D5100117F6B /* CHANGELOG.md */; };
+		F48F0D532236406400F54233 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F0D522236406400F54233 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		F449249B206F2D5100117F6B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F449249C206F2D5100117F6B /* VisualEffectView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VisualEffectView.podspec; sourceTree = "<group>"; };
 		F449249D206F2D5100117F6B /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		F48F0D522236406400F54233 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			children = (
 				8B32440F1E07D7D900712FEA /* AppDelegate.swift */,
 				8B3244111E07D7D900712FEA /* ViewController.swift */,
+				F48F0D522236406400F54233 /* Extensions.swift */,
 				8B3244131E07D7D900712FEA /* Main.storyboard */,
 				8B3244161E07D7D900712FEA /* Assets.xcassets */,
 				8B3244181E07D7D900712FEA /* LaunchScreen.storyboard */,
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B3244121E07D7D900712FEA /* ViewController.swift in Sources */,
+				F48F0D532236406400F54233 /* Extensions.swift in Sources */,
 				8B3244101E07D7D900712FEA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

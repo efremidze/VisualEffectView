@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 3.1.1](https://github.com/efremidze/VisualEffectView/releases/tag/3.1.1)
+Released on 2018-03-11
+
+- Updated example
+
 ## [Version 3.1.0](https://github.com/efremidze/VisualEffectView/releases/tag/3.1.0)
 Released on 2018-10-01
 
