@@ -1,7 +1,12 @@
 # Change log
 
+## [Version 4.0.0](https://github.com/efremidze/VisualEffectView/releases/tag/4.0.0)
+Released on 2019-04-24
+
+- Swift 5.0 support
+
 ## [Version 3.1.1](https://github.com/efremidze/VisualEffectView/releases/tag/3.1.1)
-Released on 2018-03-11
+Released on 2019-03-11
 
 - Updated example
 
