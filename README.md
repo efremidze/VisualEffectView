@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/efremidze/VisualEffectView.svg?branch=master)](https://travis-ci.org/efremidze/VisualEffectView)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Language](https://img.shields.io/badge/Swift-4-orange.svg?style=flat)](https://swift.org)
+[![Language](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)](https://swift.org)
 [![Version](https://img.shields.io/cocoapods/v/VisualEffectView.svg?style=flat)](http://cocoapods.org/pods/VisualEffectView)
 [![License](https://img.shields.io/cocoapods/l/VisualEffectView.svg?style=flat)](http://cocoapods.org/pods/VisualEffectView)
 
