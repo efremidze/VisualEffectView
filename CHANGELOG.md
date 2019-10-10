@@ -1,14 +1,19 @@
 # Change log
 
+## [Version 4.0.1](https://github.com/efremidze/VisualEffectView/releases/tag/4.0.1)
+Released on 2019-10-10
+
+- SPM Support
+
 ## [Version 4.0.0](https://github.com/efremidze/VisualEffectView/releases/tag/4.0.0)
 Released on 2019-04-24
 
-- Swift 5.0 support
+- Swift 5.0 Support
 
 ## [Version 3.1.1](https://github.com/efremidze/VisualEffectView/releases/tag/3.1.1)
 Released on 2019-03-11
 
-- Updated example
+- Updated Example
 
 ## [Version 3.1.0](https://github.com/efremidze/VisualEffectView/releases/tag/3.1.0)
 Released on 2018-10-01
@@ -18,7 +23,7 @@ Released on 2018-10-01
 ## [Version 3.0.2](https://github.com/efremidze/VisualEffectView/releases/tag/3.0.2)
 Released on 2018-04-17
 
-- Added documentation
+- Added Documentation
 
 ## [Version 3.0.1](https://github.com/efremidze/VisualEffectView/releases/tag/3.0.1)
 Released on 2018-03-30
