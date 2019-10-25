@@ -12,7 +12,7 @@ let package = Package(
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
             name: "VisualEffectView",
-            targets: ["VisualEffectView"]),
+            targets: ["VisualEffectView"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -25,11 +25,6 @@ let package = Package(
             name: "VisualEffectView",
             dependencies: [],
             path: "Sources"
-        ),
-        .testTarget(
-            name: "VisualEffectViewTests",
-            dependencies: ["VisualEffectView"],
-            path: "Tests"
-        ),
+        )
     ]
 )

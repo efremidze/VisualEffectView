@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 4.0.2](https://github.com/efremidze/VisualEffectView/releases/tag/4.0.2)
+Released on 2019-10-25
+
+- SPM Update
+
 ## [Version 4.0.1](https://github.com/efremidze/VisualEffectView/releases/tag/4.0.1)
 Released on 2019-10-10
 
