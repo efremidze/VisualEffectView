@@ -61,28 +61,28 @@ open class VisualEffectView: UIVisualEffectView {
     public override init(effect: UIVisualEffect?) {
         super.init(effect: effect)
         
-        commonInit()
+        scale = 1
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        commonInit()
-    }
-    
-    private func commonInit() {
         scale = 1
     }
     
-    // MARK: - Helpers
+}
+
+// MARK: - Helpers
+
+private extension VisualEffectView {
     
     /// Returns the value for the key on the blurEffect.
-    private func _value(forKey key: String) -> Any? {
+    func _value(forKey key: String) -> Any? {
         return blurEffect.value(forKeyPath: key)
     }
     
     /// Sets the value for the key on the blurEffect.
-    private func _setValue(_ value: Any?, forKey key: String) {
+    func _setValue(_ value: Any?, forKey key: String) {
         blurEffect.setValue(value, forKeyPath: key)
         self.effect = blurEffect
     }
