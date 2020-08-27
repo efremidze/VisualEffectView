@@ -20,7 +20,7 @@ open class VisualEffectView: UIVisualEffectView {
      The default value is nil.
      */
     open var colorTint: UIColor? {
-        get { return _value(forKey: "colorTint") as? UIColor }
+        get { return _value(forKey: "colorTint") }
         set { _setValue(newValue, forKey: "colorTint") }
     }
     
@@ -30,7 +30,7 @@ open class VisualEffectView: UIVisualEffectView {
      The default value is 0.0.
      */
     open var colorTintAlpha: CGFloat {
-        get { return _value(forKey: "colorTintAlpha") as! CGFloat }
+        get { return _value(forKey: "colorTintAlpha") }
         set { _setValue(newValue, forKey: "colorTintAlpha") }
     }
     
@@ -40,7 +40,7 @@ open class VisualEffectView: UIVisualEffectView {
      The default value is 0.0.
      */
     open var blurRadius: CGFloat {
-        get { return _value(forKey: "blurRadius") as! CGFloat }
+        get { return _value(forKey: "blurRadius") }
         set { _setValue(newValue, forKey: "blurRadius") }
     }
     
@@ -52,7 +52,7 @@ open class VisualEffectView: UIVisualEffectView {
      The default value is 1.0.
      */
     open var scale: CGFloat {
-        get { return _value(forKey: "scale") as! CGFloat }
+        get { return _value(forKey: "scale") }
         set { _setValue(newValue, forKey: "scale") }
     }
     
@@ -77,12 +77,12 @@ open class VisualEffectView: UIVisualEffectView {
 private extension VisualEffectView {
     
     /// Returns the value for the key on the blurEffect.
-    func _value(forKey key: String) -> Any? {
-        return blurEffect.value(forKeyPath: key)
+    func _value<T>(forKey key: String) -> T {
+        return blurEffect.value(forKeyPath: key) as! T
     }
     
     /// Sets the value for the key on the blurEffect.
-    func _setValue(_ value: Any?, forKey key: String) {
+    func _setValue<T>(_ value: T, forKey key: String) {
         blurEffect.setValue(value, forKeyPath: key)
         self.effect = blurEffect
     }
