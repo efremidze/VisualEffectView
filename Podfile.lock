@@ -1,0 +1,27 @@
+PODS:
+  - Aspects (1.4.1)
+  - Lumos (0.1.0):
+    - Aspects
+  - VisualEffectView (4.0.2):
+    - Lumos
+
+DEPENDENCIES:
+  - VisualEffectView (from `../VisualEffectView`)
+
+SPEC REPOS:
+  trunk:
+    - Aspects
+    - Lumos
+
+EXTERNAL SOURCES:
+  VisualEffectView:
+    :path: "../VisualEffectView"
+
+SPEC CHECKSUMS:
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  Lumos: ab4abc9d46321d13ea2b2d20de6966973fcafb50
+  VisualEffectView: a28d947b78291d088586ed856ebb9411c8955ef8
+
+PODFILE CHECKSUM: cb6c9f6bfee0c4f33b5345e3f222d9e73b91b865
+
+COCOAPODS: 1.9.1
