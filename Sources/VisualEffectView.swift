@@ -20,8 +20,20 @@ open class VisualEffectView: UIVisualEffectView {
      The default value is nil.
      */
     open var colorTint: UIColor? {
-        get { return _value(forKey: .colorTint) }
-        set { _setValue(newValue, forKey: .colorTint) }
+        get {
+            if #available(iOS 14, *) {
+                return ios14_colorTint
+            } else {
+                return _value(forKey: .colorTint)
+            }
+        }
+        set {
+            if #available(iOS 14, *) {
+                ios14_colorTint = newValue
+            } else {
+                _setValue(newValue, forKey: .colorTint)
+            }
+        }
     }
     
     /**
@@ -31,7 +43,13 @@ open class VisualEffectView: UIVisualEffectView {
      */
     open var colorTintAlpha: CGFloat {
         get { return _value(forKey: .colorTintAlpha) }
-        set { _setValue(newValue, forKey: .colorTintAlpha) }
+        set {
+            if #available(iOS 14, *) {
+                ios14_colorTint = ios14_colorTint?.withAlphaComponent(newValue)
+            } else {
+                _setValue(newValue, forKey: .colorTintAlpha)
+            }
+        }
     }
     
     /**
@@ -40,8 +58,20 @@ open class VisualEffectView: UIVisualEffectView {
      The default value is 0.0.
      */
     open var blurRadius: CGFloat {
-        get { return _value(forKey: .blurRadius) }
-        set { _setValue(newValue, forKey: .blurRadius) }
+        get {
+            if #available(iOS 14, *) {
+                return ios14_blurRadius
+            } else {
+                return _value(forKey: .blurRadius)
+            }
+        }
+        set {
+            if #available(iOS 14, *) {
+                ios14_blurRadius = newValue
+            } else {
+                _setValue(newValue, forKey: .blurRadius)
+            }
+        }
     }
     
     /**
