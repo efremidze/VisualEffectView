@@ -20,6 +20,7 @@
 		F449249F206F2D5100117F6B /* VisualEffectView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F449249C206F2D5100117F6B /* VisualEffectView.podspec */; };
 		F44924A0206F2D5100117F6B /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = F449249D206F2D5100117F6B /* CHANGELOG.md */; };
 		F48F0D532236406400F54233 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F0D522236406400F54233 /* Extensions.swift */; };
+		F4BE05CB25108C0000500B57 /* UIViewEffectViewiOS14.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BE05CA25108C0000500B57 /* UIViewEffectViewiOS14.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		F449249C206F2D5100117F6B /* VisualEffectView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VisualEffectView.podspec; sourceTree = "<group>"; };
 		F449249D206F2D5100117F6B /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		F48F0D522236406400F54233 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F4BE05CA25108C0000500B57 /* UIViewEffectViewiOS14.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewEffectViewiOS14.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				8B3DFCDF1E07D8F5009EAFA2 /* VisualEffectView.swift */,
+				F4BE05CA25108C0000500B57 /* UIViewEffectViewiOS14.swift */,
 				8B3244011E07D7CB00712FEA /* VisualEffectView.h */,
 				8B3244021E07D7CB00712FEA /* Info.plist */,
 			);
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B3DFCE01E07D8F5009EAFA2 /* VisualEffectView.swift in Sources */,
+				F4BE05CB25108C0000500B57 /* UIViewEffectViewiOS14.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +429,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 4.0.2;
+				MARKETING_VERSION = 4.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.VisualEffectView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -446,7 +450,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 4.0.2;
+				MARKETING_VERSION = 4.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.VisualEffectView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

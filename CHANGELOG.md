@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 4.1.0](https://github.com/efremidze/VisualEffectView/releases/tag/4.1.0)
+Released on 2020-09-14
+
+- iOS 14 Support
+
 ## [Version 4.0.2](https://github.com/efremidze/VisualEffectView/releases/tag/4.0.2)
 Released on 2019-10-25
 
