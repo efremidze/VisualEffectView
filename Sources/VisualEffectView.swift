@@ -114,8 +114,7 @@ private extension VisualEffectView {
     /// Sets the value for the key on the blurEffect.
     func _setValue<T>(_ value: T, forKey key: Key) {
         blurEffect.setValue(value, forKeyPath: key.rawValue)
-        if #available(iOS 14, *) {
-        } else {
+        if #available(iOS 14, *) {} else {
             self.effect = blurEffect
         }
     }
