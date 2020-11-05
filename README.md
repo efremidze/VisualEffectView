@@ -53,6 +53,9 @@ var blurRadius: CGFloat // blur radius. default is 0
 var scale: CGFloat // scale factor. default is 1
 ```
 
+If you want `colorTintAlpha` to be different from `0`, make sure you always set it right after setting the `colorTint` or it may not be applied as expected.
+You also have to make sure you don't set `colorTintAlpha` if `colorTint` is `nil`. 
+
 ### Storyboard Support
 
 Works great with storyboards and xibs.
