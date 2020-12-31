@@ -1,5 +1,13 @@
 # Change log
 
+## [Version 4.1.3](https://github.com/efremidze/VisualEffectView/releases/tag/4.1.3)
+
+- Fixed crash on iOS 10 when setting  `tintColor` to  `nil`.
+
+## [Version 4.1.2](https://github.com/efremidze/VisualEffectView/releases/tag/4.1.2)
+
+- Fixed crashes on iOS 13 or earlier when setting or accessing `tintColorAlpha` while tintColor was `nil`.
+
 ## [Version 4.1.1](https://github.com/efremidze/VisualEffectView/releases/tag/4.1.1)
 Released on 2020-09-24
 
