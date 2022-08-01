@@ -28,6 +28,7 @@ extension UIVisualEffectView {
             sourceOver?.setValue(newValue, forKeyPath: "color")
             sourceOver?.perform(Selector(("applyRequestedEffectToView:")), with: overlayView)
             applyChanges()
+            overlayView?.backgroundColor = newValue
         }
     }
 }
