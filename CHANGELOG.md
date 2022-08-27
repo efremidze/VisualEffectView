@@ -1,5 +1,9 @@
 # Change log
 
+## [Version 4.1.4](https://github.com/efremidze/VisualEffectView/releases/tag/4.1.4)
+
+- Add background changing directly (#34)
+
 ## [Version 4.1.3](https://github.com/efremidze/VisualEffectView/releases/tag/4.1.3)
 
 - Fixed crash on iOS 10 when setting  `tintColor` to  `nil`.
