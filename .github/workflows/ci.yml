@@ -1,0 +1,9 @@
+name: Swift
+on: [push]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        run: set -o pipefail && xcodebuild -project "VisualEffectView.xcodeproj" -scheme "Example" CODE_SIGNING_ALLOWED=NO clean build | xcpretty
