@@ -6,4 +6,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build
-        run: set -o pipefail && xcodebuild clean build CODE_SIGNING_ALLOWED=NO
+        run: set -o pipefail && xcodebuild -project "VisualEffectView.xcodeproj" -scheme "Example" CODE_SIGNING_ALLOWED=NO clean build | xcpretty
