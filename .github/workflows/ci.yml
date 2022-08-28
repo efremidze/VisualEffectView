@@ -6,4 +6,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build
-        run: set -o pipefail && xcodebuild clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+        run: set -o pipefail && xcodebuild clean build CODE_SIGNING_ALLOWED=NO
