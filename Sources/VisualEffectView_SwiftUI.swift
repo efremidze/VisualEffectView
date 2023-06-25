@@ -9,6 +9,7 @@
 import SwiftUI
 
 @available(iOS 13, *)
+@available(xrOS 1.0, *)
 public struct VisualEffect: UIViewRepresentable {
     let colorTint: Color?
     let colorTintAlpha: CGFloat
@@ -49,6 +50,7 @@ public struct VisualEffect: UIViewRepresentable {
 }
 
 @available(iOS 13, *)
+@available(xrOS 1.0, *)
 struct VisualEffect_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
@@ -64,6 +66,7 @@ struct VisualEffect_Previews: PreviewProvider {
 
 
 @available(iOS 13, *)
+@available(xrOS 1.0, *)
 extension Color {
 
     func uiColor() -> UIColor {
