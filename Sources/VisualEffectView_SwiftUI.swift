@@ -16,7 +16,7 @@ public struct VisualEffect: UIViewRepresentable {
     let blurRadius: CGFloat
     let scale: CGFloat
 
-    init(colorTint: Color? = nil, colorTintAlpha: CGFloat = 0, blurRadius: CGFloat = 0, scale: CGFloat = 1) {
+    public init(colorTint: Color? = nil, colorTintAlpha: CGFloat = 0, blurRadius: CGFloat = 0, scale: CGFloat = 1) {
         self.colorTint = colorTint
         self.colorTintAlpha = colorTintAlpha
         self.blurRadius = blurRadius
