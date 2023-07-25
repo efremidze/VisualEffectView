@@ -5,5 +5,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
+      - name: GitHub Action for SwiftLint
+        uses: norio-nomura/action-swiftlint@3.2.1
       - name: Build
         run: set -o pipefail && xcodebuild -project "VisualEffectView.xcodeproj" -scheme "Example" CODE_SIGNING_ALLOWED=NO clean build | xcpretty
