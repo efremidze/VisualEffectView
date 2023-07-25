@@ -1,5 +1,9 @@
 # Change log
 
+## [Version 4.1.5](https://github.com/efremidze/VisualEffectView/releases/tag/4.1.5)
+
+- Support SwiftUI (#37)
+
 ## [Version 4.1.4](https://github.com/efremidze/VisualEffectView/releases/tag/4.1.4)
 
 - Add background changing directly (#34)
