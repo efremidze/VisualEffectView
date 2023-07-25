@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,7 @@
 		8B3DFCE01E07D8F5009EAFA2 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3DFCDF1E07D8F5009EAFA2 /* VisualEffectView.swift */; };
 		8BD4B7E61E8A563A00BD74C6 /* VisualEffectView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3243FE1E07D7CB00712FEA /* VisualEffectView.framework */; };
 		8BD4B7E71E8A563A00BD74C6 /* VisualEffectView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3243FE1E07D7CB00712FEA /* VisualEffectView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		90B970382A0B38D600BE7DAF /* VisualEffectView_SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B970372A0B38D600BE7DAF /* VisualEffectView_SwiftUI.swift */; };
+		C0864C842A6FB2D2006B0F49 /* VisualEffectView_SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0864C832A6FB2D2006B0F49 /* VisualEffectView_SwiftUI.swift */; };
 		F449249E206F2D5100117F6B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F449249B206F2D5100117F6B /* README.md */; };
 		F449249F206F2D5100117F6B /* VisualEffectView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F449249C206F2D5100117F6B /* VisualEffectView.podspec */; };
 		F44924A0206F2D5100117F6B /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = F449249D206F2D5100117F6B /* CHANGELOG.md */; };
@@ -60,7 +60,7 @@
 		8B3244191E07D7D900712FEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B32441B1E07D7D900712FEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B3DFCDF1E07D8F5009EAFA2 /* VisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
-		90B970372A0B38D600BE7DAF /* VisualEffectView_SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView_SwiftUI.swift; sourceTree = "<group>"; };
+		C0864C832A6FB2D2006B0F49 /* VisualEffectView_SwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectView_SwiftUI.swift; sourceTree = "<group>"; };
 		F449249B206F2D5100117F6B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F449249C206F2D5100117F6B /* VisualEffectView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VisualEffectView.podspec; sourceTree = "<group>"; };
 		F449249D206F2D5100117F6B /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -113,9 +113,9 @@
 			children = (
 				8B3DFCDF1E07D8F5009EAFA2 /* VisualEffectView.swift */,
 				F4BE05CA25108C0000500B57 /* UIViewEffectViewiOS14.swift */,
+				C0864C832A6FB2D2006B0F49 /* VisualEffectView_SwiftUI.swift */,
 				8B3244011E07D7CB00712FEA /* VisualEffectView.h */,
 				8B3244021E07D7CB00712FEA /* Info.plist */,
-				90B970372A0B38D600BE7DAF /* VisualEffectView_SwiftUI.swift */,
 			);
 			name = VisualEffectView;
 			path = Sources;
@@ -192,9 +192,8 @@
 		8B3243F51E07D7CB00712FEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Lasha Efremidze";
 				TargetAttributes = {
 					8B3243FD1E07D7CB00712FEA = {
@@ -210,7 +209,7 @@
 				};
 			};
 			buildConfigurationList = 8B3243F81E07D7CB00712FEA /* Build configuration list for PBXProject "VisualEffectView" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -258,7 +257,7 @@
 			files = (
 				8B3DFCE01E07D8F5009EAFA2 /* VisualEffectView.swift in Sources */,
 				F4BE05CB25108C0000500B57 /* UIViewEffectViewiOS14.swift in Sources */,
-				90B970382A0B38D600BE7DAF /* VisualEffectView_SwiftUI.swift in Sources */,
+				C0864C842A6FB2D2006B0F49 /* VisualEffectView_SwiftUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -411,7 +410,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -434,7 +433,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -443,8 +441,6 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 4.1.4;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.VisualEffectView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -462,7 +458,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -471,8 +466,6 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 4.1.4;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.VisualEffectView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

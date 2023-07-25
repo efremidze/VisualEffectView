@@ -20,7 +20,7 @@ $ pod try VisualEffectView
 ## Requirements
 
 - iOS 9.0+
-- iOS 13.0 + (For SwiftUI Support)
+- iOS 14.0 + (SwiftUI support)
 - Xcode 9.0+
 - Swift 5 (VisualEffectView 4.x), Swift 4 (VisualEffectView 3.x), Swift 3 (VisualEffectView 2.x), Swift 2 (VisualEffectView 1.x)
 
@@ -64,7 +64,7 @@ Works great with storyboards and xibs.
 
 ### SwiftUI Support
 
-VisualEffectView works well with the SwiftUI.
+VisualEffectView supports SwiftUI.
 
 ```swift
 import VisualEffectView
@@ -76,8 +76,7 @@ struct ContentView: View {
 }
 ```
 
-You have to make sure you don't set `colorTintAlpha` if `colorTint` is `nil`. 
-
+Make sure that `colorTintAlpha` is not set when `colorTint` is `nil`.
 
 ## Installation
 
