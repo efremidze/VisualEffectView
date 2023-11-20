@@ -9,9 +9,7 @@
 
 **VisualEffectView** is a blur effect library with tint color support. This library uses the [UIVisualEffectView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/) to generate the blur.
 
-![Demo GIF](https://thumbs.gfycat.com/EnormousLightBullmastiff-size_restricted.gif)
-
-[Demo Video](https://gfycat.com/EnormousLightBullmastiff)
+<img src="/Images/demo.gif" width="250" />
 
 ```
 $ pod try VisualEffectView
