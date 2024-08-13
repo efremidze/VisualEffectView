@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = "VisualEffectView"
-    s.version          = "4.1.5"
+    s.version          = "5.0.0"
     s.license          = 'MIT'
     s.homepage         = "https://github.com/efremidze/VisualEffectView"
     s.author           = { "Lasha Efremidze" => "efremidzel@hotmail.com" }
@@ -17,5 +17,5 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/efremidze/VisualEffectView.git', :tag => s.version }
     s.source_files     = "Sources/*.swift"
     s.swift_version = '5.0'
-    s.ios.deployment_target = '9.0'
+    s.ios.deployment_target = '14.0'
 end
