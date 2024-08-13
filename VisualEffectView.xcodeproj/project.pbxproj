@@ -16,12 +16,12 @@
 		8B3DFCE01E07D8F5009EAFA2 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3DFCDF1E07D8F5009EAFA2 /* VisualEffectView.swift */; };
 		8BD4B7E61E8A563A00BD74C6 /* VisualEffectView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3243FE1E07D7CB00712FEA /* VisualEffectView.framework */; };
 		8BD4B7E71E8A563A00BD74C6 /* VisualEffectView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3243FE1E07D7CB00712FEA /* VisualEffectView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C0864C842A6FB2D2006B0F49 /* VisualEffectView_SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0864C832A6FB2D2006B0F49 /* VisualEffectView_SwiftUI.swift */; };
+		C0864C842A6FB2D2006B0F49 /* VisualEffectView+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0864C832A6FB2D2006B0F49 /* VisualEffectView+SwiftUI.swift */; };
 		F449249E206F2D5100117F6B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F449249B206F2D5100117F6B /* README.md */; };
 		F449249F206F2D5100117F6B /* VisualEffectView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F449249C206F2D5100117F6B /* VisualEffectView.podspec */; };
 		F44924A0206F2D5100117F6B /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = F449249D206F2D5100117F6B /* CHANGELOG.md */; };
 		F48F0D532236406400F54233 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F0D522236406400F54233 /* Extensions.swift */; };
-		F4BE05CB25108C0000500B57 /* UIViewEffectView_iOS14.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BE05CA25108C0000500B57 /* UIViewEffectView_iOS14.swift */; };
+		F4BE05CB25108C0000500B57 /* UIViewEffectView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BE05CA25108C0000500B57 /* UIViewEffectView+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,12 +60,12 @@
 		8B3244191E07D7D900712FEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B32441B1E07D7D900712FEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B3DFCDF1E07D8F5009EAFA2 /* VisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
-		C0864C832A6FB2D2006B0F49 /* VisualEffectView_SwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectView_SwiftUI.swift; sourceTree = "<group>"; };
+		C0864C832A6FB2D2006B0F49 /* VisualEffectView+SwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VisualEffectView+SwiftUI.swift"; sourceTree = "<group>"; };
 		F449249B206F2D5100117F6B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F449249C206F2D5100117F6B /* VisualEffectView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VisualEffectView.podspec; sourceTree = "<group>"; };
 		F449249D206F2D5100117F6B /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		F48F0D522236406400F54233 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		F4BE05CA25108C0000500B57 /* UIViewEffectView_iOS14.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewEffectView_iOS14.swift; sourceTree = "<group>"; };
+		F4BE05CA25108C0000500B57 /* UIViewEffectView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewEffectView+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				8B3DFCDF1E07D8F5009EAFA2 /* VisualEffectView.swift */,
-				F4BE05CA25108C0000500B57 /* UIViewEffectView_iOS14.swift */,
-				C0864C832A6FB2D2006B0F49 /* VisualEffectView_SwiftUI.swift */,
+				F4BE05CA25108C0000500B57 /* UIViewEffectView+Helpers.swift */,
+				C0864C832A6FB2D2006B0F49 /* VisualEffectView+SwiftUI.swift */,
 				8B3244011E07D7CB00712FEA /* VisualEffectView.h */,
 				8B3244021E07D7CB00712FEA /* Info.plist */,
 			);
@@ -256,8 +256,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B3DFCE01E07D8F5009EAFA2 /* VisualEffectView.swift in Sources */,
-				F4BE05CB25108C0000500B57 /* UIViewEffectView_iOS14.swift in Sources */,
-				C0864C842A6FB2D2006B0F49 /* VisualEffectView_SwiftUI.swift in Sources */,
+				F4BE05CB25108C0000500B57 /* UIViewEffectView+Helpers.swift in Sources */,
+				C0864C842A6FB2D2006B0F49 /* VisualEffectView+SwiftUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

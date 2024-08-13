@@ -7,33 +7,7 @@
 
 import UIKit
 
-@available(iOS 14, *)
 extension UIVisualEffectView {
-    var ios14_blurRadius: CGFloat {
-        get {
-            return gaussianBlur?.requestedValues?["inputRadius"] as? CGFloat ?? 0
-        }
-        set {
-            prepareForChanges()
-            gaussianBlur?.requestedValues?["inputRadius"] = newValue
-            applyChanges()
-        }
-    }
-    var ios14_colorTint: UIColor? {
-        get {
-            return sourceOver?.value(forKeyPath: "color") as? UIColor
-        }
-        set {
-            prepareForChanges()
-            sourceOver?.setValue(newValue, forKeyPath: "color")
-            sourceOver?.perform(Selector(("applyRequestedEffectToView:")), with: overlayView)
-            applyChanges()
-            overlayView?.backgroundColor = newValue
-        }
-    }
-}
-
-private extension UIVisualEffectView {
     var backdropView: UIView? {
         return subview(of: NSClassFromString("_UIVisualEffectBackdropView"))
     }
@@ -55,7 +29,7 @@ private extension UIVisualEffectView {
     }
 }
 
-private extension NSObject {
+extension NSObject {
     var requestedValues: [String: Any]? {
         get { return value(forKeyPath: "requestedValues") as? [String: Any] }
         set { setValue(newValue, forKeyPath: "requestedValues") }

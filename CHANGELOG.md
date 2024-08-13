@@ -1,5 +1,9 @@
 # Change log
 
+## [Version 5.0.0](https://github.com/efremidze/VisualEffectView/releases/tag/5.0.0)
+
+- Dropped iOS 13 support (use 4.x.x for iOS 9+ support)
+
 ## [Version 4.1.5](https://github.com/efremidze/VisualEffectView/releases/tag/4.1.5)
 
 - Support SwiftUI (#37)
