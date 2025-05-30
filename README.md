@@ -1,11 +1,11 @@
 # VisualEffectView
 
-[![Swift](https://github.com/efremidze/VisualEffectView/actions/workflows/ci.yml/badge.svg)](https://github.com/efremidze/VisualEffectView/actions/workflows/ci.yml)
-[![Build Status](https://travis-ci.org/efremidze/VisualEffectView.svg?branch=master)](https://travis-ci.org/efremidze/VisualEffectView)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Language](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)](https://swift.org)
-[![Version](https://img.shields.io/cocoapods/v/VisualEffectView.svg?style=flat)](http://cocoapods.org/pods/VisualEffectView)
-[![License](https://img.shields.io/cocoapods/l/VisualEffectView.svg?style=flat)](http://cocoapods.org/pods/VisualEffectView)
+[![CI](https://github.com/efremidze/VisualEffectView/actions/workflows/ci.yml/badge.svg)](https://github.com/efremidze/VisualEffectView/actions/workflows/ci.yml)
+[![CocoaPods](https://img.shields.io/cocoapods/v/VisualEffectView.svg)](https://cocoapods.org/pods/VisualEffectView)
+[![Carthage](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)](https://github.com/Carthage/Carthage)
+[![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://swift.org/package-manager/)
+[![Swift](https://img.shields.io/badge/Swift-5.9+-orange.svg)](https://swift.org)
+[![License](https://img.shields.io/github/license/efremidze/VisualEffectView.svg)](https://github.com/efremidze/VisualEffectView/blob/master/LICENSE)
 
 **VisualEffectView** is a blur effect library with tint color support. This library uses the [UIVisualEffectView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/) to generate the blur.
 
