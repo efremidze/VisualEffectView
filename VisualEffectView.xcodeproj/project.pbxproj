@@ -439,7 +439,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 4.1.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.VisualEffectView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.VisualEffectView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -464,7 +464,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 4.1.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.VisualEffectView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.VisualEffectView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -481,7 +481,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -497,7 +497,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
