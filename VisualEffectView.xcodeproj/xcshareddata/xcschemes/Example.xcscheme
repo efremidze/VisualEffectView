@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1320"
+   LastUpgradeVersion = "1620"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8B32440C1E07D7D900712FEA"
+               BlueprintIdentifier = "F4487E672E4DE4BE00884226"
                BuildableName = "Example.app"
                BlueprintName = "Example"
                ReferencedContainer = "container:VisualEffectView.xcodeproj">
@@ -44,7 +44,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8B32440C1E07D7D900712FEA"
+            BlueprintIdentifier = "F4487E672E4DE4BE00884226"
             BuildableName = "Example.app"
             BlueprintName = "Example"
             ReferencedContainer = "container:VisualEffectView.xcodeproj">
@@ -61,7 +61,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8B32440C1E07D7D900712FEA"
+            BlueprintIdentifier = "F4487E672E4DE4BE00884226"
             BuildableName = "Example.app"
             BlueprintName = "Example"
             ReferencedContainer = "container:VisualEffectView.xcodeproj">
