@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,8 +13,34 @@
 		F449249E206F2D5100117F6B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F449249B206F2D5100117F6B /* README.md */; };
 		F449249F206F2D5100117F6B /* VisualEffectView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F449249C206F2D5100117F6B /* VisualEffectView.podspec */; };
 		F44924A0206F2D5100117F6B /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = F449249D206F2D5100117F6B /* CHANGELOG.md */; };
+		F49B90F72E4DED7500B8431A /* VisualEffectView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3243FE1E07D7CB00712FEA /* VisualEffectView.framework */; };
+		F49B90F82E4DED7500B8431A /* VisualEffectView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3243FE1E07D7CB00712FEA /* VisualEffectView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F4BE05CB25108C0000500B57 /* UIViewEffectView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BE05CA25108C0000500B57 /* UIViewEffectView+Helpers.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F49B90F92E4DED7500B8431A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B3243F51E07D7CB00712FEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B3243FD1E07D7CB00712FEA;
+			remoteInfo = VisualEffectView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F49B90FB2E4DED7500B8431A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F49B90F82E4DED7500B8431A /* VisualEffectView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8B3243FE1E07D7CB00712FEA /* VisualEffectView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VisualEffectView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F49B90F72E4DED7500B8431A /* VisualEffectView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +85,7 @@
 				F449249C206F2D5100117F6B /* VisualEffectView.podspec */,
 				8B3244001E07D7CB00712FEA /* VisualEffectView */,
 				F4487E692E4DE4BE00884226 /* Example */,
+				F49B90F62E4DED7500B8431A /* Frameworks */,
 				8B3243FF1E07D7CB00712FEA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,6 +109,13 @@
 			);
 			name = VisualEffectView;
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		F49B90F62E4DED7500B8431A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,10 +157,12 @@
 				F4487E642E4DE4BE00884226 /* Sources */,
 				F4487E652E4DE4BE00884226 /* Frameworks */,
 				F4487E662E4DE4BE00884226 /* Resources */,
+				F49B90FB2E4DED7500B8431A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F49B90FA2E4DED7500B8431A /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				F4487E692E4DE4BE00884226 /* Example */,
@@ -215,6 +252,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F49B90FA2E4DED7500B8431A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B3243FD1E07D7CB00712FEA /* VisualEffectView */;
+			targetProxy = F49B90F92E4DED7500B8431A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8B3244041E07D7CB00712FEA /* Debug */ = {
