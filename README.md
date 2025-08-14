@@ -68,7 +68,7 @@ import VisualEffectView
 
 struct ContentView: View {
     var body: some View {
-        VisualEffect(colorTint: .white, colorTintAlpha: 0.5, blurRadius: 18, scale: 1)
+        VisualEffect(colorTint: .white, colorTintAlpha: 0.5, blurRadius: 10, scale: 1)
     }
 }
 ```
