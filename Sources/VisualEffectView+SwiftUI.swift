@@ -38,6 +38,15 @@ public struct VisualEffect: UIViewRepresentable {
     let blurRadius: CGFloat
 
     /**
+     The saturation adjustment factor.
+     
+     Values > 1.0 increase saturation, values < 1.0 decrease saturation, and 1.0 maintains original saturation.
+     
+     The default value is `1.0`.
+     */
+    let saturation: CGFloat
+
+    /**
      The scale factor for the blur effect.
      
      The default value is `1.0`.
@@ -51,12 +60,14 @@ public struct VisualEffect: UIViewRepresentable {
         - colorTint: The tint color to apply to the blur effect. Defaults to `nil`.
         - colorTintAlpha: The alpha component of the tint color. Defaults to `0.0`.
         - blurRadius: The radius of the blur effect. Defaults to `0.0`.
+        - saturation: The saturation adjustment factor. Values > 1.0 increase saturation, values < 1.0 decrease saturation. Defaults to `1.0`.
         - scale: The scale factor for the blur effect. Defaults to `1.0`.
      */
-    public init(colorTint: Color? = nil, colorTintAlpha: CGFloat = 0, blurRadius: CGFloat = 0, scale: CGFloat = 1) {
+    public init(colorTint: Color? = nil, colorTintAlpha: CGFloat = 0, blurRadius: CGFloat = 0, saturation: CGFloat = 1, scale: CGFloat = 1) {
         self.colorTint = colorTint
         self.colorTintAlpha = colorTintAlpha
         self.blurRadius = blurRadius
+        self.saturation = saturation
         self.scale = scale
     }
     
@@ -69,6 +80,7 @@ public struct VisualEffect: UIViewRepresentable {
         }
         view.colorTintAlpha = colorTintAlpha
         view.blurRadius = blurRadius
+        view.saturation = saturation
         view.scale = scale
         
         return view
@@ -80,6 +92,7 @@ public struct VisualEffect: UIViewRepresentable {
         }
         uiView.colorTintAlpha = colorTintAlpha
         uiView.blurRadius = blurRadius
+        uiView.saturation = saturation
         uiView.scale = scale
     }
 }
@@ -90,7 +103,7 @@ public struct VisualEffect: UIViewRepresentable {
             .frame(width: 400, height: 400)
         Color.red
             .frame(width: 200, height: 100)
-        VisualEffect(colorTint: .white, colorTintAlpha: 0.5, blurRadius: 18)
+        VisualEffect(colorTint: .white, colorTintAlpha: 0.5, blurRadius: 18, saturation: 2.0)
             .frame(width: 300, height: 200)
     }
 }
