@@ -11,7 +11,6 @@ import VisualEffectView
 
 struct ContentView: View {
     @State private var blurRadius: CGFloat = 0
-    @State private var saturation: CGFloat = 1
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -27,8 +26,7 @@ struct ContentView: View {
                         VisualEffect(
                             colorTint: color,
                             colorTintAlpha: 0.5,
-                            blurRadius: blurRadius,
-                            saturation: saturation
+                            blurRadius: blurRadius
                         )
                     }
                 }
@@ -36,21 +34,11 @@ struct ContentView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             VStack(spacing: 16) {
-                VStack {
-                    Slider(value: $blurRadius, in: 0...20)
-                    
-                    Text("Slide to blur")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
+                Slider(value: $blurRadius, in: 0...20)
                 
-                VStack {
-                    Slider(value: $saturation, in: 0...3)
-                    
-                    Text("Slide to adjust saturation")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
+                Text("Slide to blur")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
             }
             .padding(.horizontal, 32)
             .padding(.bottom, 32)
