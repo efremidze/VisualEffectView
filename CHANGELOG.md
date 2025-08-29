@@ -1,5 +1,9 @@
 # Change log
 
+## [Version 5.0.8](https://github.com/efremidze/VisualEffectView/releases/tag/5.0.8)
+
+- Readded saturation
+
 ## [Version 5.0.7](https://github.com/efremidze/VisualEffectView/releases/tag/5.0.7)
 
 - Update platforms to iOS14 in Package.swift by @Phyber64 in https://github.com/efremidze/VisualEffectView/pull/45

@@ -436,7 +436,6 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.1.5;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.VisualEffectView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -463,7 +462,6 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0.7;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.VisualEffectView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,7 +496,6 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example;
@@ -537,7 +534,6 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
