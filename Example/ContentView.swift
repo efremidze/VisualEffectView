@@ -33,7 +33,7 @@ struct ContentView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             
-            VStack(spacing: 16) {
+            VStack {
                 Slider(value: $blurRadius, in: 0...20)
                 
                 Text("Slide to blur")
