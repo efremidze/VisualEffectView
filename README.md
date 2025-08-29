@@ -50,6 +50,7 @@ var colorTint: UIColor // tint color. default is nil
 var colorTintAlpha: CGFloat // tint color alpha. default is 0
 var blurRadius: CGFloat // blur radius. default is 0
 var scale: CGFloat // scale factor. default is 1
+var saturation: CGFloat // saturation factor. default is 1
 ```
 
 If you want `colorTintAlpha` to be different from `0`, make sure you always set it right after setting the `colorTint` or it may not be applied as expected.
