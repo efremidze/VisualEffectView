@@ -61,6 +61,18 @@ open class VisualEffectView: UIVisualEffectView {
     }
     
     /**
+     Saturation factor.
+     
+     Values above 1.0 increase saturation, values below 1.0 decrease saturation, and 1.0 maintains original saturation.
+     
+     The default value is 1.0.
+     */
+    open var saturation: CGFloat {
+        get { return _value(forKey: .saturationDeltaFactor) ?? 1.0 }
+        set { _setValue(newValue, forKey: .saturationDeltaFactor) }
+    }
+    
+    /**
      Scale factor.
      
      The scale factor determines how content in the view is mapped from the logical coordinate space (measured in points) to the device coordinate space (measured in pixels).
@@ -103,7 +115,7 @@ private extension VisualEffectView {
     }
     
     enum Key: String {
-        case colorTint, colorTintAlpha, blurRadius, scale
+        case colorTint, colorTintAlpha, blurRadius, saturationDeltaFactor, scale
     }
     
 }
