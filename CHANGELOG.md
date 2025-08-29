@@ -1,5 +1,17 @@
 # Change log
 
+## [Version 5.0.7](https://github.com/efremidze/VisualEffectView/releases/tag/5.0.7)
+
+- Update platforms to iOS14 in Package.swift by @Phyber64 in https://github.com/efremidze/VisualEffectView/pull/45
+- Update Swift Tools Version to 5.3 to Fix Minimum iOS Version Compatibility by @efremidze in https://github.com/efremidze/VisualEffectView/pull/47
+- Updated Badges by @efremidze in https://github.com/efremidze/VisualEffectView/pull/50
+- Added Swift Build Workflow by @efremidze in https://github.com/efremidze/VisualEffectView/pull/51
+- Update Package.swift by @efremidze in https://github.com/efremidze/VisualEffectView/pull/52
+- Updated Demo by @efremidze in https://github.com/efremidze/VisualEffectView/pull/53
+- Update README.md by @efremidze in https://github.com/efremidze/VisualEffectView/pull/54
+- Add saturation adjustment property to VisualEffectView by @Copilot in https://github.com/efremidze/VisualEffectView/pull/58
+- Update folders to properly follow SPM conventions by @efremidze in https://github.com/efremidze/VisualEffectView/pull/61
+
 ## [Version 5.0.0](https://github.com/efremidze/VisualEffectView/releases/tag/5.0.0)
 
 - Dropped iOS 13 support (use 4.x.x for iOS 9+ support)
