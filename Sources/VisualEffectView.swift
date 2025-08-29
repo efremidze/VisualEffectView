@@ -61,9 +61,9 @@ open class VisualEffectView: UIVisualEffectView {
     }
     
     /**
-     Saturation adjustment factor.
+     Saturation factor.
      
-     Values > 1.0 increase saturation, values < 1.0 decrease saturation, and 1.0 maintains original saturation.
+     Values above 1.0 increase saturation, values below 1.0 decrease saturation, and 1.0 maintains original saturation.
      
      The default value is 1.0.
      */
