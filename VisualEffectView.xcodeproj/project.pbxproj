@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B3244031E07D7CB00712FEA /* VisualEffectView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B3244011E07D7CB00712FEA /* VisualEffectView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8B3DFCE01E07D8F5009EAFA2 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3DFCDF1E07D8F5009EAFA2 /* VisualEffectView.swift */; };
-		C0864C842A6FB2D2006B0F49 /* VisualEffectView+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0864C832A6FB2D2006B0F49 /* VisualEffectView+SwiftUI.swift */; };
 		F449249E206F2D5100117F6B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F449249B206F2D5100117F6B /* README.md */; };
 		F449249F206F2D5100117F6B /* VisualEffectView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F449249C206F2D5100117F6B /* VisualEffectView.podspec */; };
 		F44924A0206F2D5100117F6B /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = F449249D206F2D5100117F6B /* CHANGELOG.md */; };
 		F49B90F72E4DED7500B8431A /* VisualEffectView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3243FE1E07D7CB00712FEA /* VisualEffectView.framework */; };
 		F49B90F82E4DED7500B8431A /* VisualEffectView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3243FE1E07D7CB00712FEA /* VisualEffectView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F4BE05CB25108C0000500B57 /* UIViewEffectView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BE05CA25108C0000500B57 /* UIViewEffectView+Helpers.swift */; };
 		F4EFB65C2E4E5DA000348AC7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EFB6592E4E5DA000348AC7 /* ContentView.swift */; };
 		F4EFB65D2E4E5DA000348AC7 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EFB65A2E4E5DA000348AC7 /* ExampleApp.swift */; };
 		F4EFB65E2E4E5DA000348AC7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EFB6562E4E5DA000348AC7 /* Preview Assets.xcassets */; };
 		F4EFB65F2E4E5DA000348AC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EFB6582E4E5DA000348AC7 /* Assets.xcassets */; };
+		F4FDC4A92E614F1A0026D226 /* VisualEffectView.h in Headers */ = {isa = PBXBuildFile; fileRef = F4FDC4A42E614F1A0026D226 /* VisualEffectView.h */; };
+		F4FDC4AA2E614F1A0026D226 /* UIViewEffectView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDC4A32E614F1A0026D226 /* UIViewEffectView+Helpers.swift */; };
+		F4FDC4AB2E614F1A0026D226 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDC4A52E614F1A0026D226 /* VisualEffectView.swift */; };
+		F4FDC4AC2E614F1A0026D226 /* VisualEffectView+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDC4A62E614F1A0026D226 /* VisualEffectView+SwiftUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,18 +48,18 @@
 
 /* Begin PBXFileReference section */
 		8B3243FE1E07D7CB00712FEA /* VisualEffectView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VisualEffectView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B3244011E07D7CB00712FEA /* VisualEffectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisualEffectView.h; sourceTree = "<group>"; };
-		8B3DFCDF1E07D8F5009EAFA2 /* VisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
-		C0864C832A6FB2D2006B0F49 /* VisualEffectView+SwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VisualEffectView+SwiftUI.swift"; sourceTree = "<group>"; };
 		F4487E682E4DE4BE00884226 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F449249B206F2D5100117F6B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F449249C206F2D5100117F6B /* VisualEffectView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VisualEffectView.podspec; sourceTree = "<group>"; };
 		F449249D206F2D5100117F6B /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
-		F4BE05CA25108C0000500B57 /* UIViewEffectView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewEffectView+Helpers.swift"; sourceTree = "<group>"; };
 		F4EFB6562E4E5DA000348AC7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F4EFB6582E4E5DA000348AC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4EFB6592E4E5DA000348AC7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F4EFB65A2E4E5DA000348AC7 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
+		F4FDC4A32E614F1A0026D226 /* UIViewEffectView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewEffectView+Helpers.swift"; sourceTree = "<group>"; };
+		F4FDC4A42E614F1A0026D226 /* VisualEffectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisualEffectView.h; sourceTree = "<group>"; };
+		F4FDC4A52E614F1A0026D226 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
+		F4FDC4A62E614F1A0026D226 /* VisualEffectView+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VisualEffectView+SwiftUI.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 				F449249D206F2D5100117F6B /* CHANGELOG.md */,
 				F449249B206F2D5100117F6B /* README.md */,
 				F449249C206F2D5100117F6B /* VisualEffectView.podspec */,
-				8B3244001E07D7CB00712FEA /* VisualEffectView */,
+				F4FDC4A82E614F1A0026D226 /* Sources */,
 				F4EFB65B2E4E5DA000348AC7 /* Example */,
 				F49B90F62E4DED7500B8431A /* Frameworks */,
 				8B3243FF1E07D7CB00712FEA /* Products */,
@@ -101,18 +101,6 @@
 				F4487E682E4DE4BE00884226 /* Example.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		8B3244001E07D7CB00712FEA /* VisualEffectView */ = {
-			isa = PBXGroup;
-			children = (
-				8B3DFCDF1E07D8F5009EAFA2 /* VisualEffectView.swift */,
-				F4BE05CA25108C0000500B57 /* UIViewEffectView+Helpers.swift */,
-				C0864C832A6FB2D2006B0F49 /* VisualEffectView+SwiftUI.swift */,
-				8B3244011E07D7CB00712FEA /* VisualEffectView.h */,
-			);
-			name = VisualEffectView;
-			path = Sources;
 			sourceTree = "<group>";
 		};
 		F49B90F62E4DED7500B8431A /* Frameworks */ = {
@@ -141,6 +129,25 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
+		F4FDC4A72E614F1A0026D226 /* VisualEffectView */ = {
+			isa = PBXGroup;
+			children = (
+				F4FDC4A32E614F1A0026D226 /* UIViewEffectView+Helpers.swift */,
+				F4FDC4A42E614F1A0026D226 /* VisualEffectView.h */,
+				F4FDC4A52E614F1A0026D226 /* VisualEffectView.swift */,
+				F4FDC4A62E614F1A0026D226 /* VisualEffectView+SwiftUI.swift */,
+			);
+			path = VisualEffectView;
+			sourceTree = "<group>";
+		};
+		F4FDC4A82E614F1A0026D226 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F4FDC4A72E614F1A0026D226 /* VisualEffectView */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -148,7 +155,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B3244031E07D7CB00712FEA /* VisualEffectView.h in Headers */,
+				F4FDC4A92E614F1A0026D226 /* VisualEffectView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,9 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B3DFCE01E07D8F5009EAFA2 /* VisualEffectView.swift in Sources */,
-				F4BE05CB25108C0000500B57 /* UIViewEffectView+Helpers.swift in Sources */,
-				C0864C842A6FB2D2006B0F49 /* VisualEffectView+SwiftUI.swift in Sources */,
+				F4FDC4AA2E614F1A0026D226 /* UIViewEffectView+Helpers.swift in Sources */,
+				F4FDC4AB2E614F1A0026D226 /* VisualEffectView.swift in Sources */,
+				F4FDC4AC2E614F1A0026D226 /* VisualEffectView+SwiftUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
