@@ -83,6 +83,27 @@ open class VisualEffectView: UIVisualEffectView {
         get { return _value(forKey: .scale) ?? 1.0 }
         set { _setValue(newValue, forKey: .scale) }
     }
+
+    public var style: VisualEffectStyle = .none {
+        didSet {
+            switch style {
+
+            case .none:
+                effectView.effect = nil
+
+            case .blur(let blur):
+                effectView.effect = makeBlurEffect(from: blur)
+
+            case .glass(let glass):
+                if #available(iOS 26.0, *) {
+                    effectView.effect = makeGlassEffect(from: glass)
+                } else {
+                    // graceful fallback
+                    effectView.effect = UIBlurEffect(style: .systemThinMaterial)
+                }
+            }
+        }
+    }
     
     // MARK: - Initialization
     
@@ -121,3 +142,20 @@ private extension VisualEffectView {
 }
 
 // ["grayscaleTintLevel", "grayscaleTintAlpha", "lightenGrayscaleWithSourceOver", "colorTint", "colorTintAlpha", "colorBurnTintLevel", "colorBurnTintAlpha", "darkeningTintAlpha", "darkeningTintHue", "darkeningTintSaturation", "darkenWithSourceOver", "blurRadius", "saturationDeltaFactor", "scale", "zoom"]
+
+private extension VisualEffectView {
+    func makeBlurEffect(from style: BlurStyle) -> UIVisualEffect {
+        switch style {
+        case .system(let uiStyle):
+            return UIBlurEffect(style: uiStyle)
+
+        case .custom:
+            return UIBlurEffect(style: .light) // your existing custom pipeline
+        }
+    }
+
+    @available(iOS 26.0, *)
+    private func makeGlassEffect(from style: GlassStyle) -> UIVisualEffect {
+        return UIGlassEffect(style: style.value)
+    }
+}
