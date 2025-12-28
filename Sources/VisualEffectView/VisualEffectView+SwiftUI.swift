@@ -53,32 +53,6 @@ public struct VisualEffect: UIViewRepresentable {
      */
     let scale: CGFloat
     
-    public enum BlurStyle: Equatable {
-        case system(UIBlurEffect.Style)
-        case custom(radius: CGFloat, saturation: CGFloat)
-    }
-
-    @available(iOS 26.0, *)
-    public enum GlassStyle: Equatable {
-        case regular
-        case clear
-        case prominent
-
-        var value: UIGlassEffect.Style {
-            switch self {
-            case .regular: .regular
-            case .clear: .clear
-            case .prominent: .prominent
-            }
-        }
-    }
-
-    public enum VisualEffectStyle: Equatable {
-        case blur(BlurStyle)
-        @available(iOS 26.0, *)
-        case glass(GlassStyle)
-    }
-
     @available(iOS 26.0, *)
     public var glassTintColor: UIColor?
 
