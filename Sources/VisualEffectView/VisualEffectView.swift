@@ -132,8 +132,7 @@ open class VisualEffectView: UIVisualEffectView {
 
         case .glass(let glass):
             if #available(iOS 26.0, *) {
-                // Switching from blur/custom -> glass is fine.
-                self.effect = makeGlassEffect(from: glass)
+                self.effect = UIGlassEffect(style: glass.uiStyle) // UIKit iOS 26 API
             } else {
                 // graceful fallback on older OS
                 apply(style: .blur(.system(.systemThinMaterial)))
@@ -190,11 +189,6 @@ private extension VisualEffectView {
             // (This mirrors what you were doing in your stub.)
             return UIBlurEffect(style: .light)
         }
-    }
-
-    @available(iOS 26.0, *)
-    func makeGlassEffect(from style: GlassStyle) -> UIVisualEffect {
-        return UIGlassEffect(style: style.value)
     }
 
     /// iOS 26: Some builds have a bug where setting `effect = nil` after a `UIGlassEffect`
