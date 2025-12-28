@@ -15,6 +15,34 @@ open class VisualEffectView: UIVisualEffectView {
     /// Returns the instance of UIBlurEffect.
     private let blurEffect = (NSClassFromString("_UICustomBlurEffect") as! UIBlurEffect.Type).init()
     
+    // MARK: - Public Style API
+
+    public enum VisualEffectStyle: Sendable, Equatable {
+        case none
+        case systemBlur(UIBlurEffect.Style)
+        case customBlur
+        case glass(GlassStyle) // iOS 26+
+    }
+
+    public enum GlassStyle: Sendable, Equatable {
+        case regular
+        case clear
+        
+        @available(iOS 26.0, *)
+        fileprivate var uiStyle: UIGlassEffect.Style {
+            switch self {
+            case .regular: return .regular
+            case .clear: return .clear
+            }
+        }
+    }
+    
+    /// High-level switch for the backing material.
+    /// Default keeps existing behavior by using `.customBlur`.
+    public var style: VisualEffectStyle = .customBlur {
+        didSet { applyStyle(style) }
+    }
+    
     /**
      Tint color.
      
