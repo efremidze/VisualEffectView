@@ -84,23 +84,31 @@ open class VisualEffectView: UIVisualEffectView {
         set { _setValue(newValue, forKey: .scale) }
     }
 
+    // MARK: - Style property
+
     public var style: VisualEffectStyle = .none {
         didSet {
-            switch style {
+            apply(style: style)
+        }
+    }
 
-            case .none:
-                effectView.effect = nil
+    func apply(style: VisualEffectStyle) {
+        switch style {
+        case .none:
+            clearEffectWorkaroundIfNeeded()
+            self.effect = nil
 
-            case .blur(let blur):
-                effectView.effect = makeBlurEffect(from: blur)
+        case .blur(let blur):
+            clearEffectWorkaroundIfNeeded()
+            self.effect = makeBlurEffect(from: blur)
 
-            case .glass(let glass):
-                if #available(iOS 26.0, *) {
-                    effectView.effect = makeGlassEffect(from: glass)
-                } else {
-                    // graceful fallback
-                    effectView.effect = UIBlurEffect(style: .systemThinMaterial)
-                }
+        case .glass(let glass):
+            if #available(iOS 26.0, *) {
+                // Switching from blur/custom -> glass is fine.
+                effectView.effect = makeGlassEffect(from: glass)
+            } else {
+                // graceful fallback on older OS
+                apply(style: .blur(.system(.systemThinMaterial)))
             }
         }
     }
@@ -150,12 +158,21 @@ private extension VisualEffectView {
             return UIBlurEffect(style: uiStyle)
 
         case .custom:
-            return UIBlurEffect(style: .light) // your existing custom pipeline
+            // Attach any UIBlurEffect; your existing private pipeline controls the look.
+            // (This mirrors what you were doing in your stub.)
+            return UIBlurEffect(style: .light)
         }
     }
 
     @available(iOS 26.0, *)
-    private func makeGlassEffect(from style: GlassStyle) -> UIVisualEffect {
+    func makeGlassEffect(from style: GlassStyle) -> UIVisualEffect {
         return UIGlassEffect(style: style.value)
+    }
+
+    /// iOS 26: Some builds have a bug where setting `effect = nil` after a `UIGlassEffect`
+    /// does not remove the effect; setting an intermediate effect first works around it.
+    func clearEffectWorkaroundIfNeeded() {
+        guard #available(iOS 26.0, *), self.effect is UIGlassEffect else { return }
+        self.effect = UIBlurEffect(style: .systemMaterial)
     }
 }
