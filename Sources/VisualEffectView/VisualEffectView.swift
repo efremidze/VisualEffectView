@@ -8,34 +8,6 @@
 
 import UIKit
 
-public enum VisualEffectStyle: Sendable, Equatable {
-    case none
-    case blur(BlurStyle)
-    case glass(GlassStyle)
-}
-
-public enum BlurStyle: Sendable, Equatable {
-    case system(UIBlurEffect.Style)
-
-    /// Use your existing private blur pipeline (tint/saturation/scale/blurRadius knobs).
-    /// This returns *some* blur effect to attach to `self.effect`; your existing code
-    /// will continue to drive the private effect parameters.
-    case custom
-}
-
-public enum GlassStyle: Sendable, Equatable {
-    case regular
-    case clear
-    
-    @available(iOS 26.0, *)
-    fileprivate var uiStyle: UIGlassEffect.Style {
-        switch self {
-        case .regular: return .regular
-        case .clear: return .clear
-        }
-    }
-}
-
 /// VisualEffectView is a dynamic background blur view.
 @objcMembers
 open class VisualEffectView: UIVisualEffectView {
