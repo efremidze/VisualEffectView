@@ -36,14 +36,14 @@ open class VisualEffectView: UIVisualEffectView {
     
     // MARK: - Public Style API
     
-    public enum VisualEffectStyle: Sendable, Equatable {
+    public enum VisualEffectStyle: Sendable, Hashable {
         case none
         case systemBlur(UIBlurEffect.Style)
         case customBlur
         case glass(GlassStyle) // iOS 26+
     }
     
-    public enum GlassStyle: Sendable, Equatable {
+    public enum GlassStyle: Sendable, Hashable {
         case regular
         case clear
         
