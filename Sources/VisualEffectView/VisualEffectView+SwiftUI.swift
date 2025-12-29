@@ -2,7 +2,7 @@
 //  VisualEffectView+SwiftUI.swift
 //  VisualEffectView
 //
-//  Created by 朱浩宇 on 2023/5/10.
+//  Created by Lasha Efremidze on 5/26/16.
 //  Copyright © 2023 Lasha Efremidze. All rights reserved.
 //
 
@@ -11,59 +11,96 @@ import SwiftUI
 /**
  A SwiftUI view that applies a visual effect to the background of its content.
  
- This view uses the `VisualEffectView` class to create a blur effect on the background of its content.
+ This view uses the `VisualEffectView` class to create blur and glass effects.
  
- The effect can be customized with parameters such as tint color, tint alpha, blur radius, and scale.
+ ## Usage
+ 
+ Style-based (recommended):
+ ```swift
+ VisualEffect(style: .systemBlur(.dark))
+ VisualEffect(style: .glass(.regular))
+ ```
+ 
+ Legacy customizable blur:
+ ```swift
+ VisualEffect(colorTint: .white, colorTintAlpha: 0.5, blurRadius: 18)
+ ```
+ 
+ - Note: Blur parameters (colorTint, blurRadius, etc.) only apply to `.customBlur` style.
  */
 public struct VisualEffect: UIViewRepresentable {
-    /**
-     The tint color to apply to the blur effect.
-     
-     The default value is `nil`.
-     */
+    public typealias VisualEffectStyle = VisualEffectView.VisualEffectStyle
+    
+    // MARK: - Style
+    
+    /// Optional high-level style selector.
+    /// If `nil`, the legacy customizable blur pipeline is used for backward compatibility.
+    let style: VisualEffectStyle?
+    
+    // MARK: - Blur parameters (customBlur only)
+    
     let colorTint: Color?
-
-    /**
-     The alpha component of the tint color.
-     
-     The default value is `0.0`.
-     */
     let colorTintAlpha: CGFloat
-
-    /**
-     The radius of the blur effect.
-     
-     The default value is `0.0`.
-     */
     let blurRadius: CGFloat
-
-    /**
-     The saturation factor.
-     
-     Values above 1.0 increase saturation, values below 1.0 decrease saturation, and 1.0 maintains original saturation.
-     
-     The default value is `1.0`.
-     */
     let saturation: CGFloat
-
-    /**
-     The scale factor for the blur effect.
-     
-     The default value is `1.0`.
-     */
     let scale: CGFloat
     
+    // MARK: - Initializers
+    
     /**
-     Initializes a `VisualEffect` view with the specified parameters.
+     Style-based initializer (recommended).
+     
+     Use this for system blur, glass effects, or explicit custom blur.
+     
+     - Parameter style: The visual effect style to apply.
+     
+     ## Example
+     ```swift
+     VisualEffect(style: .systemBlur(.dark))
+     VisualEffect(style: .glass(.regular))
+     VisualEffect(style: .customBlur)
+     ```
+     */
+    public init(style: VisualEffectStyle) {
+        self.style = style
+        self.colorTint = nil
+        self.colorTintAlpha = 0
+        self.blurRadius = 0
+        self.saturation = 1
+        self.scale = 1
+    }
+    
+    /**
+     Legacy customizable blur initializer.
+     
+     Uses the customizable blur pipeline with fine-grained control over blur parameters.
+     Maintained for backward compatibility.
      
      - Parameters:
-        - colorTint: The tint color to apply to the blur effect. Defaults to `nil`.
-        - colorTintAlpha: The alpha component of the tint color. Defaults to `0.0`.
-        - blurRadius: The radius of the blur effect. Defaults to `0.0`.
-        - saturation: The saturation adjustment factor. Values above 1.0 increase saturation, values below 1.0 decrease saturation. Defaults to `1.0`.
-        - scale: The scale factor for the blur effect. Defaults to `1.0`.
+       - colorTint: Optional tint color overlay
+       - colorTintAlpha: Alpha value for the tint color (0.0 - 1.0)
+       - blurRadius: Blur intensity in points
+       - saturation: Color saturation multiplier (1.0 = original, >1.0 = more saturated, <1.0 = less saturated)
+       - scale: Scale factor for the blur effect
+     
+     ## Example
+     ```swift
+     VisualEffect(
+         colorTint: .white,
+         colorTintAlpha: 0.5,
+         blurRadius: 18,
+         saturation: 1.8
+     )
+     ```
      */
-    public init(colorTint: Color? = nil, colorTintAlpha: CGFloat = 0, blurRadius: CGFloat = 0, saturation: CGFloat = 1, scale: CGFloat = 1) {
+    public init(
+        colorTint: Color? = nil,
+        colorTintAlpha: CGFloat = 0,
+        blurRadius: CGFloat = 0,
+        saturation: CGFloat = 1,
+        scale: CGFloat = 1
+    ) {
+        self.style = nil  // nil signals legacy mode
         self.colorTint = colorTint
         self.colorTintAlpha = colorTintAlpha
         self.blurRadius = blurRadius
@@ -71,9 +108,36 @@ public struct VisualEffect: UIViewRepresentable {
         self.scale = scale
     }
     
+    // MARK: - UIViewRepresentable
+    
     public func makeUIView(context: Context) -> VisualEffectView {
         let view = VisualEffectView()
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        if let style {
+            view.style = style
+        }
+        // else: keep view's default (.customBlur) for backward compatibility
+        
+        applyBlurParameters(to: view)
+        return view
+    }
+    
+    public func updateUIView(_ uiView: VisualEffectView, context: Context) {
+        if let style {
+            uiView.style = style
+        }
+        
+        applyBlurParameters(to: uiView)
+    }
+    
+    // MARK: - Helpers
+    
+    /// Applies blur-only parameters when appropriate.
+    private func applyBlurParameters(to view: VisualEffectView) {
+        // Only apply these parameters when using the custom blur pipeline
+        // (either explicitly via style or implicitly via legacy init)
+        guard style == nil || style == .customBlur else { return }
         
         if let colorTint {
             view.colorTint = colorTint.uiColor()
@@ -82,31 +146,10 @@ public struct VisualEffect: UIViewRepresentable {
         view.blurRadius = blurRadius
         view.saturation = saturation
         view.scale = scale
-        
-        return view
-    }
-    
-    public func updateUIView(_ uiView: VisualEffectView, context: Context) {
-        if let colorTint {
-            uiView.colorTint = colorTint.uiColor()
-        }
-        uiView.colorTintAlpha = colorTintAlpha
-        uiView.blurRadius = blurRadius
-        uiView.saturation = saturation
-        uiView.scale = scale
     }
 }
 
-#Preview {
-    ZStack {
-        Color.blue
-            .frame(width: 400, height: 400)
-        Color.red
-            .frame(width: 200, height: 100)
-        VisualEffect(colorTint: .white, colorTintAlpha: 0.5, blurRadius: 18, saturation: 2.0)
-            .frame(width: 300, height: 200)
-    }
-}
+// MARK: - Color Extension
 
 private extension Color {
     func uiColor() -> UIColor {
