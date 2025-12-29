@@ -2,7 +2,7 @@
 //  VisualEffectView+SwiftUI.swift
 //  VisualEffectView
 //
-//  Created by 朱浩宇 on 2023/5/10.
+//  Created by Lasha Efremidze on 5/26/16.
 //  Copyright © 2023 Lasha Efremidze. All rights reserved.
 //
 
