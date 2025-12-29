@@ -119,18 +119,16 @@ struct ContentView: View {
                     }
                     
                     // Glass Effect Section
-                    if #available(iOS 17.0, *) {
-                        VStack(alignment: .leading, spacing: 16) {
-                            Text("Glass Effect")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                                .padding(.horizontal, 4)
-                            
-                            DemoCard(
-                                title: "Glass Regular",
-                                style: .glass(.regular)
-                            )
-                        }
+                    VStack(alignment: .leading, spacing: 16) {
+                        Text("Glass Effect")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .padding(.horizontal, 4)
+                        
+                        DemoCard(
+                            title: "Glass Regular",
+                            style: .glass(.regular)
+                        )
                     }
                 }
                 .padding()
