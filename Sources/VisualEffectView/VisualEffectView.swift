@@ -86,9 +86,12 @@ open class VisualEffectView: UIVisualEffectView {
         scale: 1
     )
     
+    // MARK: - Custom Blur Properties
+    
     /**
      Tint color.
      
+     - Note: Only applies when `style` is `.customBlur`.
      The default value is nil.
      */
     open var colorTint: UIColor? {
@@ -108,6 +111,7 @@ open class VisualEffectView: UIVisualEffectView {
     /**
      Tint color alpha.
      
+     - Note: Only applies when `style` is `.customBlur`.
      Don't use it unless `colorTint` is not nil.
      The default value is 0.0.
      */
@@ -119,6 +123,7 @@ open class VisualEffectView: UIVisualEffectView {
     /**
      Blur radius.
      
+     - Note: Only applies when `style` is `.customBlur`.
      The default value is 0.0.
      */
     open var blurRadius: CGFloat {
@@ -138,6 +143,7 @@ open class VisualEffectView: UIVisualEffectView {
      
      Values above 1.0 increase saturation, values below 1.0 decrease saturation, and 1.0 maintains original saturation.
      
+     - Note: Only applies when `style` is `.customBlur`.
      The default value is 1.0.
      */
     open var saturation: CGFloat {
@@ -153,6 +159,7 @@ open class VisualEffectView: UIVisualEffectView {
      
      The scale factor determines how content in the view is mapped from the logical coordinate space (measured in points) to the device coordinate space (measured in pixels).
      
+     - Note: Only applies when `style` is `.customBlur`.
      The default value is 1.0.
      */
     open var scale: CGFloat {
