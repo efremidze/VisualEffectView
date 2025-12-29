@@ -142,58 +142,43 @@ struct ContentView: View {
 struct DemoCard: View {
     let title: String
     let style: VisualEffectView.VisualEffectStyle
-    let colorTint: Color?
-    let colorTintAlpha: CGFloat
-    let blurRadius: CGFloat
-    let saturation: CGFloat
+    var colorTint: Color? = nil
+    var colorTintAlpha: CGFloat = 0
+    var blurRadius: CGFloat = 0
+    var saturation: CGFloat = 1
     var height: CGFloat = 200
     
-    init(
-        title: String,
-        style: VisualEffectView.VisualEffectStyle,
-        colorTint: Color? = nil,
-        colorTintAlpha: CGFloat = 0,
-        blurRadius: CGFloat = 0,
-        saturation: CGFloat = 1,
-        height: CGFloat = 200
-    ) {
-        self.title = title
-        self.style = style
-        self.colorTint = colorTint
-        self.colorTintAlpha = colorTintAlpha
-        self.blurRadius = blurRadius
-        self.saturation = saturation
-        self.height = height
+    private var isCustomBlur: Bool {
+        if case .customBlur = style { return true }
+        return false
     }
     
     var body: some View {
         ZStack {
-            Group {
-                if style == .customBlur {
-                    VisualEffect(
-                        colorTint: colorTint,
-                        colorTintAlpha: colorTintAlpha,
-                        blurRadius: blurRadius,
-                        saturation: saturation
-                    )
-                } else {
-                    VisualEffect(style: style)
+            if isCustomBlur {
+                VisualEffect(
+                    colorTint: colorTint,
+                    colorTintAlpha: colorTintAlpha,
+                    blurRadius: blurRadius,
+                    saturation: saturation
+                )
+            } else {
+                VisualEffect(style: style)
+            }
+        }
+        .frame(height: height)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .overlay {
+            VStack(spacing: 8) {
+                Text(title)
+                    .font(.headline)
+                if isCustomBlur {
+                    Text("Blur: \(Int(blurRadius))")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
                 }
             }
-            .frame(height: height)
-            .cornerRadius(20)
-            .overlay {
-                VStack(spacing: 8) {
-                    Text(title)
-                        .font(.headline)
-                    if style == .customBlur {
-                        Text("Blur: \(Int(blurRadius))")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                    }
-                }
-                .padding()
-            }
+            .padding()
         }
     }
 }
