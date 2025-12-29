@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = "VisualEffectView"
-    s.version          = "5.0.8"
+    s.version          = "6.0.0"
     s.license          = 'MIT'
     s.homepage         = "https://github.com/efremidze/VisualEffectView"
     s.author           = { "Lasha Efremidze" => "efremidzel@hotmail.com" }
