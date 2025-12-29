@@ -142,7 +142,7 @@ struct ContentView: View {
 struct DemoCard: View {
     let title: String
     let style: VisualEffectView.VisualEffectStyle
-    var colorTint: Color? = nil
+    var colorTint: Color?
     var colorTintAlpha: CGFloat = 0
     var blurRadius: CGFloat = 0
     var saturation: CGFloat = 1
