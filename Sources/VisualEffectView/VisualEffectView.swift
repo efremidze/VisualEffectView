@@ -47,6 +47,7 @@ open class VisualEffectView: UIVisualEffectView {
         case regular
         case clear
         
+        #if compiler(>=6.0)
         @available(iOS 26.0, *)
         fileprivate var uiStyle: UIGlassEffect.Style {
             switch self {
@@ -54,6 +55,7 @@ open class VisualEffectView: UIVisualEffectView {
             case .clear: return .clear
             }
         }
+        #endif
         
         /// Fallback blur style for iOS < 26
         fileprivate var fallbackBlurStyle: UIBlurEffect.Style {
@@ -228,12 +230,17 @@ private extension VisualEffectView {
             reapplyCustomSnapshot()
             
         case .glass(let glass):
+            #if compiler(>=6.0)
             if #available(iOS 26.0, *) {
                 self.effect = UIGlassEffect(style: glass.uiStyle)
             } else {
                 // Graceful fallback on older OS with style-appropriate blur
                 self.effect = UIBlurEffect(style: glass.fallbackBlurStyle)
             }
+            #else
+            // Fallback for older compilers that don't have UIGlassEffect
+            self.effect = UIBlurEffect(style: glass.fallbackBlurStyle)
+            #endif
         }
     }
     
