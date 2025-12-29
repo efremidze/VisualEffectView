@@ -1,5 +1,5 @@
 //
-//  UIViewEffectViewiOS14.swift
+//  UIVisualEffectView+Helpers.swift
 //  VisualEffectView
 //
 //  Created by Lasha Efremidze on 9/14/20.
