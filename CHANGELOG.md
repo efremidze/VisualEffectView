@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 6.0.0](https://github.com/efremidze/VisualEffectView/releases/tag/6.0.0)
+
+- Added iOS 26+ glass effect support with automatic fallback
+- Added style-based API with `.systemBlur`, `.customBlur`, and `.glass` options
+
 ## [Version 5.0.8](https://github.com/efremidze/VisualEffectView/releases/tag/5.0.8)
 
 - Readded saturation
