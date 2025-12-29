@@ -43,6 +43,22 @@ open class VisualEffectView: UIVisualEffectView {
         didSet { applyStyle(style) }
     }
     
+    // MARK: - Preserve custom settings across style switches
+
+    private struct CustomSnapshot {
+        var colorTint: UIColor?
+        var blurRadius: CGFloat
+        var saturation: CGFloat
+        var scale: CGFloat
+    }
+
+    private var customSnapshot = CustomSnapshot(
+        colorTint: nil,
+        blurRadius: 0,
+        saturation: 1,
+        scale: 1
+    )
+        
     /**
      Tint color.
      
@@ -53,6 +69,7 @@ open class VisualEffectView: UIVisualEffectView {
             return sourceOver?.value(forKeyPath: "color") as? UIColor
         }
         set {
+            customSnapshot.colorTint = newValue
             prepareForChanges()
             sourceOver?.setValue(newValue, forKeyPath: "color")
             sourceOver?.perform(Selector(("applyRequestedEffectToView:")), with: overlayView)
@@ -82,6 +99,7 @@ open class VisualEffectView: UIVisualEffectView {
             return gaussianBlur?.requestedValues?["inputRadius"] as? CGFloat ?? 0
         }
         set {
+            customSnapshot.blurRadius = newValue
             prepareForChanges()
             gaussianBlur?.requestedValues?["inputRadius"] = newValue
             applyChanges()
@@ -97,7 +115,10 @@ open class VisualEffectView: UIVisualEffectView {
      */
     open var saturation: CGFloat {
         get { return _value(forKey: .saturationDeltaFactor) ?? 1.0 }
-        set { _setValue(newValue, forKey: .saturationDeltaFactor) }
+        set {
+            customSnapshot.saturation = newValue
+            _setValue(newValue, forKey: .saturationDeltaFactor)
+        }
     }
     
     /**
@@ -109,16 +130,28 @@ open class VisualEffectView: UIVisualEffectView {
      */
     open var scale: CGFloat {
         get { return _value(forKey: .scale) ?? 1.0 }
-        set { _setValue(newValue, forKey: .scale) }
-    }
-
-    // MARK: - Style property
-
-    public var style: VisualEffectStyle = .none {
-        didSet {
-            apply(style: style)
+        set {
+            customSnapshot.scale = newValue
+            _setValue(newValue, forKey: .scale)
         }
     }
+    
+    // MARK: - Initialization
+    
+    public override init(effect: UIVisualEffect?) {
+        super.init(effect: effect)
+        // Keep previous default behavior: custom pipeline “on”
+        applyStyle(style)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        applyStyle(style)
+    }
+    
+}
+
+// MARK: - Style
 
 private extension VisualEffectView {
     
