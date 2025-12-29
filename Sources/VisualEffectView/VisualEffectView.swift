@@ -227,12 +227,12 @@ private extension VisualEffectView {
             // Re-apply settings snapshot so switching styles is reversible
             reapplyCustomSnapshot()
             
-        case .glass(let glass):
+        case .glass(let style):
             if #available(iOS 26.0, *) {
-                self.effect = UIGlassEffect(style: glass.uiStyle)
+                self.effect = createGlassEffect(style: style)
             } else {
                 // Graceful fallback on older OS with style-appropriate blur
-                self.effect = UIBlurEffect(style: glass.fallbackBlurStyle)
+                self.effect = UIBlurEffect(style: style.fallbackBlurStyle)
             }
         }
     }
