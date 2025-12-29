@@ -201,36 +201,33 @@ struct DemoCard: View {
 // MARK: - Animated Background
 
 struct AnimatedBackground: View {
-    @State private var rotation: Double = 0
-    
     var body: some View {
-        ZStack {
-            LinearGradient(
-                colors: [.blue, .purple, .pink, .orange],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
+        TimelineView(.animation) { timeline in
+            let time = timeline.date.timeIntervalSinceReferenceDate
             
-            // Animated shapes
-            ForEach(0..<3, id: \.self) { index in
-                Circle()
-                    .fill(
-                        LinearGradient(
-                            colors: [.white.opacity(0.2), .clear],
-                            startPoint: .top,
-                            endPoint: .bottom
+            ZStack {
+                LinearGradient(
+                    colors: [.blue, .purple, .pink, .orange],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                
+                // Animated shapes
+                ForEach(0..<3, id: \.self) { index in
+                    Circle()
+                        .fill(
+                            LinearGradient(
+                                colors: [.white.opacity(0.2), .clear],
+                                startPoint: .top,
+                                endPoint: .bottom
+                            )
                         )
-                    )
-                    .frame(width: 200 + Double(index) * 100)
-                    .offset(
-                        x: cos(rotation + Double(index) * 2) * 100,
-                        y: sin(rotation + Double(index) * 2) * 100
-                    )
-            }
-        }
-        .onAppear {
-            withAnimation(.linear(duration: 20).repeatForever(autoreverses: false)) {
-                rotation = .pi * 2
+                        .frame(width: 200 + Double(index) * 100)
+                        .offset(
+                            x: cos(time / 5 + Double(index) * 2) * 100,
+                            y: sin(time / 5 + Double(index) * 2) * 100
+                        )
+                }
             }
         }
     }
