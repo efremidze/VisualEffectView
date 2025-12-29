@@ -12,7 +12,17 @@ import SwiftUI
 struct ExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                ContentView()
+                    .tabItem {
+                        Label("Modern", systemImage: "sparkles")
+                    }
+                
+                LegacyContentView()
+                    .tabItem {
+                        Label("Legacy", systemImage: "clock.arrow.circlepath")
+                    }
+            }
         }
     }
 }
