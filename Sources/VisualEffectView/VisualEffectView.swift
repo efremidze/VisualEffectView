@@ -16,14 +16,14 @@ open class VisualEffectView: UIVisualEffectView {
     private let blurEffect = (NSClassFromString("_UICustomBlurEffect") as! UIBlurEffect.Type).init()
     
     // MARK: - Public Style API
-
+    
     public enum VisualEffectStyle: Sendable, Equatable {
         case none
         case systemBlur(UIBlurEffect.Style)
         case customBlur
         case glass(GlassStyle) // iOS 26+
     }
-
+    
     public enum GlassStyle: Sendable, Equatable {
         case regular
         case clear
@@ -44,21 +44,21 @@ open class VisualEffectView: UIVisualEffectView {
     }
     
     // MARK: - Preserve custom settings across style switches
-
+    
     private struct CustomSnapshot {
         var colorTint: UIColor?
         var blurRadius: CGFloat
         var saturation: CGFloat
         var scale: CGFloat
     }
-
+    
     private var customSnapshot = CustomSnapshot(
         colorTint: nil,
         blurRadius: 0,
         saturation: 1,
         scale: 1
     )
-        
+    
     /**
      Tint color.
      
@@ -80,7 +80,7 @@ open class VisualEffectView: UIVisualEffectView {
     
     /**
      Tint color alpha.
-
+     
      Don't use it unless `colorTint` is not nil.
      The default value is 0.0.
      */
@@ -186,6 +186,7 @@ private extension VisualEffectView {
         self.blurRadius = customSnapshot.blurRadius
         self.colorTint = customSnapshot.colorTint
     }
+    
     
 }
 
