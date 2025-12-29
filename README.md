@@ -118,7 +118,7 @@ github "efremidze/VisualEffectView"
 Add VisualEffectView as a dependency in your `Package.swift` file:
 ```swift
 dependencies: [
-    .package(url: "https://github.com/efremidze/VisualEffectView.git", from: "5.0.0")
+    .package(url: "https://github.com/efremidze/VisualEffectView.git", from: "6.0.0")
 ]
 ```
 
