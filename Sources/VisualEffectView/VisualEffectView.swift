@@ -237,6 +237,19 @@ private extension VisualEffectView {
         }
     }
     
+    /// Creates UIGlassEffect using runtime reflection to avoid compile-time SDK dependency
+    func createGlassEffect(style: GlassStyle) -> UIVisualEffect? {
+        // Check if UIGlassEffect exists at runtime (iOS 26+)
+        guard let glassEffectClass = NSClassFromString("UIGlassEffect") as? NSObject.Type else {
+            return nil
+        }
+        
+        // Create the effect using KVC to avoid compile-time type checking
+        let glassEffect = glassEffectClass.init()
+        glassEffect.setValue(style.rawValue, forKey: "style")
+        return glassEffect as? UIVisualEffect
+    }
+    
     func reapplyCustomSnapshot() {
         // Apply in a safe order; these call into the existing custom pipeline
         self.scale = customSnapshot.scale
