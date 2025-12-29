@@ -9,6 +9,25 @@
 import UIKit
 
 /// VisualEffectView is a dynamic background blur view.
+///
+/// ## Usage
+/// ```swift
+/// // Legacy customizable blur (default for backward compatibility)
+/// let view = VisualEffectView()
+/// view.blurRadius = 20
+/// view.colorTint = .white
+///
+/// // Style-based API
+/// let systemView = VisualEffectView()
+/// systemView.style = .systemBlur(.dark)
+///
+/// // Glass effect (iOS 26+)
+/// let glassView = VisualEffectView()
+/// glassView.style = .glass(.regular)
+/// ```
+///
+/// - Note: Custom blur properties (blurRadius, colorTint, etc.) only apply when using `.customBlur` style.
+@MainActor
 @objcMembers
 open class VisualEffectView: UIVisualEffectView {
     
@@ -33,6 +52,14 @@ open class VisualEffectView: UIVisualEffectView {
             switch self {
             case .regular: return .regular
             case .clear: return .clear
+            }
+        }
+        
+        /// Fallback blur style for iOS < 26
+        fileprivate var fallbackBlurStyle: UIBlurEffect.Style {
+            switch self {
+            case .regular: return .systemMaterial
+            case .clear: return .systemUltraThinMaterial
             }
         }
     }
