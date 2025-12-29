@@ -10,135 +10,236 @@ import SwiftUI
 import VisualEffectView
 
 struct ContentView: View {
-    @State private var blurRadius: CGFloat = 0
+    typealias VisualEffectStyle = VisualEffectView.VisualEffectStyle
+    @State private var blurRadius: CGFloat = 18
+    @State private var colorTintAlpha: CGFloat = 0.5
+    @State private var saturation: CGFloat = 1.0
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                ForEach(Color.colors, id: \.self) { color in
-                    ZStack {
-                        Image(systemName: "swift")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50, height: 100)
-                            .foregroundStyle(.black)
+        ZStack {
+            // Animated background
+            AnimatedBackground()
+                .ignoresSafeArea()
+            
+            ScrollView {
+                VStack(spacing: 32) {
+                    // Header
+                    VStack(spacing: 8) {
+                        Text("VisualEffectView")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        Text("Dynamic blur effects with style-based API")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+                    .padding(.top, 20)
+                    
+                    // Custom Blur Section
+                    VStack(alignment: .leading, spacing: 16) {
+                        Text("Custom Blur")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .padding(.horizontal, 4)
                         
-                        VisualEffect(
-                            colorTint: color,
-                            colorTintAlpha: 0.5,
-                            blurRadius: blurRadius
+                        // Custom blur controls
+                        VStack(alignment: .leading, spacing: 16) {
+                            VStack(spacing: 12) {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    HStack {
+                                        Text("Blur Radius")
+                                        Spacer()
+                                        Text("\(Int(blurRadius))")
+                                            .foregroundStyle(.secondary)
+                                    }
+                                    Slider(value: $blurRadius, in: 0...30)
+                                }
+                                
+                                VStack(alignment: .leading, spacing: 4) {
+                                    HStack {
+                                        Text("Tint Alpha")
+                                        Spacer()
+                                        Text(String(format: "%.2f", colorTintAlpha))
+                                            .foregroundStyle(.secondary)
+                                    }
+                                    Slider(value: $colorTintAlpha, in: 0...1)
+                                }
+                                
+                                VStack(alignment: .leading, spacing: 4) {
+                                    HStack {
+                                        Text("Saturation")
+                                        Spacer()
+                                        Text(String(format: "%.2f", saturation))
+                                            .foregroundStyle(.secondary)
+                                    }
+                                    Slider(value: $saturation, in: 0...3)
+                                }
+                            }
+                        }
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 16)
+                                .fill(.ultraThinMaterial)
+                        }
+                        
+                        // Custom blur demo
+                        DemoCard(
+                            title: "Custom Blur",
+                            style: .customBlur,
+                            colorTint: .white,
+                            colorTintAlpha: colorTintAlpha,
+                            blurRadius: blurRadius,
+                            saturation: saturation
                         )
+                        
+                        // Color tint examples
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("Color Tint Examples")
+                                .font(.headline)
+                                .padding(.horizontal, 4)
+                            
+                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+                                ForEach([
+                                    ("Red", Color.red),
+                                    ("Blue", Color.blue),
+                                    ("Green", Color.green),
+                                    ("Purple", Color.purple)
+                                ], id: \.0) { name, color in
+                                    DemoCard(
+                                        title: name,
+                                        style: .customBlur,
+                                        colorTint: color,
+                                        colorTintAlpha: colorTintAlpha,
+                                        blurRadius: blurRadius,
+                                        saturation: saturation,
+                                        height: 120
+                                    )
+                                }
+                            }
+                        }
+                    }
+                    
+                    // Glass Effect Section
+                    if #available(iOS 17.0, *) {
+                        VStack(alignment: .leading, spacing: 16) {
+                            Text("Glass Effect")
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                                .padding(.horizontal, 4)
+                            
+                            DemoCard(
+                                title: "Glass Regular",
+                                style: .glass(.regular)
+                            )
+                        }
                     }
                 }
+                .padding()
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            
-            VStack {
-                Slider(value: $blurRadius, in: 0...20)
-                
-                Text("Slide to blur")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            }
-            .padding(.horizontal, 32)
-            .padding(.bottom, 32)
         }
     }
 }
 
-private extension Color {
-    static let colors = [red, orange, yellow, green, teal, blue, purple, pink]
+// MARK: - Demo Card
+
+struct DemoCard: View {
+    let title: String
+    let style: VisualEffectView.VisualEffectStyle
+    let colorTint: Color?
+    let colorTintAlpha: CGFloat
+    let blurRadius: CGFloat
+    let saturation: CGFloat
+    var height: CGFloat = 200
+    
+    init(
+        title: String,
+        style: VisualEffectView.VisualEffectStyle,
+        colorTint: Color? = nil,
+        colorTintAlpha: CGFloat = 0,
+        blurRadius: CGFloat = 0,
+        saturation: CGFloat = 1,
+        height: CGFloat = 200
+    ) {
+        self.title = title
+        self.style = style
+        self.colorTint = colorTint
+        self.colorTintAlpha = colorTintAlpha
+        self.blurRadius = blurRadius
+        self.saturation = saturation
+        self.height = height
+    }
+    
+    var body: some View {
+        ZStack {
+            Group {
+                if style == .customBlur {
+                    VisualEffect(
+                        colorTint: colorTint,
+                        colorTintAlpha: colorTintAlpha,
+                        blurRadius: blurRadius,
+                        saturation: saturation
+                    )
+                } else {
+                    VisualEffect(style: style)
+                }
+            }
+            .frame(height: height)
+            .cornerRadius(20)
+            .overlay {
+                VStack(spacing: 8) {
+                    Text(title)
+                        .font(.headline)
+                    if style == .customBlur {
+                        Text("Blur: \(Int(blurRadius))")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .padding()
+            }
+        }
+    }
 }
+
+// MARK: - Animated Background
+
+struct AnimatedBackground: View {
+    @State private var rotation: Double = 0
+    
+    var body: some View {
+        ZStack {
+            LinearGradient(
+                colors: [.blue, .purple, .pink, .orange],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            
+            // Animated shapes
+            ForEach(0..<3, id: \.self) { index in
+                Circle()
+                    .fill(
+                        LinearGradient(
+                            colors: [.white.opacity(0.2), .clear],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                    )
+                    .frame(width: 200 + Double(index) * 100)
+                    .offset(
+                        x: cos(rotation + Double(index) * 2) * 100,
+                        y: sin(rotation + Double(index) * 2) * 100
+                    )
+            }
+        }
+        .onAppear {
+            withAnimation(.linear(duration: 20).repeatForever(autoreverses: false)) {
+                rotation = .pi * 2
+            }
+        }
+    }
+}
+
+// MARK: - Preview
 
 #Preview {
     ContentView()
-}
-
-#Preview("Custom Blur") {
-    ZStack {
-        LinearGradient(
-            colors: [.blue, .purple],
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-        )
-        .ignoresSafeArea()
-        
-        Color.red
-            .frame(width: 200, height: 100)
-        
-        VisualEffect(
-            colorTint: .green,
-            colorTintAlpha: 0.5,
-            blurRadius: 18,
-            saturation: 2.0
-        )
-        .frame(width: 300, height: 200)
-        .cornerRadius(20)
-    }
-}
-
-#Preview("System Blur") {
-    ZStack {
-        Image(systemName: "sparkles")
-            .font(.system(size: 200))
-            .foregroundStyle(.blue)
-        
-        VStack(spacing: 20) {
-            Text("System Blur")
-                .font(.title)
-            
-            VisualEffect(style: .systemBlur(.systemMaterial))
-                .frame(width: 300, height: 100)
-                .cornerRadius(16)
-                .overlay {
-                    Text("Content over blur")
-                        .font(.headline)
-                }
-        }
-    }
-}
-
-@available(iOS 17.0, *)
-#Preview("Glass Effect", traits: .fixedLayout(width: 400, height: 400)) {
-    ZStack {
-        LinearGradient(
-            colors: [.orange, .pink],
-            startPoint: .top,
-            endPoint: .bottom
-        )
-        .ignoresSafeArea()
-        
-        VStack(spacing: 20) {
-            if #available(iOS 26.0, *) {
-                Text("Glass Effect (iOS 26+)")
-                    .font(.title3)
-                
-                VisualEffect(style: .glass(.regular))
-                    .frame(width: 300, height: 100)
-                    .cornerRadius(20)
-                    .overlay {
-                        Text("Regular Glass")
-                    }
-                
-                VisualEffect(style: .glass(.clear))
-                    .frame(width: 300, height: 100)
-                    .cornerRadius(20)
-                    .overlay {
-                        Text("Clear Glass")
-                    }
-            } else {
-                Text("Glass Effect")
-                    .font(.title3)
-                Text("(Fallback on iOS < 26)")
-                    .font(.caption)
-                
-                VisualEffect(style: .glass(.regular))
-                    .frame(width: 300, height: 100)
-                    .cornerRadius(20)
-                    .overlay {
-                        Text("Regular Glass Fallback")
-                    }
-            }
-        }
-    }
 }
