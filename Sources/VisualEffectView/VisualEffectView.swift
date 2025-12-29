@@ -120,38 +120,38 @@ open class VisualEffectView: UIVisualEffectView {
         }
     }
 
-    func apply(style: VisualEffectStyle) {
+private extension VisualEffectView {
+    
+    func applyStyle(_ style: VisualEffectStyle) {
         switch style {
         case .none:
-            clearEffectWorkaroundIfNeeded()
             self.effect = nil
-
-        case .blur(let blur):
-            clearEffectWorkaroundIfNeeded()
-            self.effect = makeBlurEffect(from: blur)
-
+            
+        case .systemBlur(let style):
+            self.effect = UIBlurEffect(style: style)
+            
+        case .customBlur:
+            // Switch back to your private/custom effect object
+            self.effect = blurEffect
+            // Re-apply settings snapshot so switching styles is reversible
+            reapplyCustomSnapshot()
+            
         case .glass(let glass):
             if #available(iOS 26.0, *) {
                 self.effect = UIGlassEffect(style: glass.uiStyle) // UIKit iOS 26 API
             } else {
                 // graceful fallback on older OS
-                apply(style: .blur(.system(.systemThinMaterial)))
+                self.effect = UIBlurEffect(style: .systemThinMaterial)
             }
         }
     }
     
-    // MARK: - Initialization
-    
-    public override init(effect: UIVisualEffect?) {
-        super.init(effect: effect)
-        
-        scale = 1
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        scale = 1
+    func reapplyCustomSnapshot() {
+        // Apply in a safe order; these call into your existing private pipeline
+        self.scale = customSnapshot.scale
+        self.saturation = customSnapshot.saturation
+        self.blurRadius = customSnapshot.blurRadius
+        self.colorTint = customSnapshot.colorTint
     }
     
 }
@@ -177,24 +177,3 @@ private extension VisualEffectView {
 }
 
 // ["grayscaleTintLevel", "grayscaleTintAlpha", "lightenGrayscaleWithSourceOver", "colorTint", "colorTintAlpha", "colorBurnTintLevel", "colorBurnTintAlpha", "darkeningTintAlpha", "darkeningTintHue", "darkeningTintSaturation", "darkenWithSourceOver", "blurRadius", "saturationDeltaFactor", "scale", "zoom"]
-
-private extension VisualEffectView {
-    func makeBlurEffect(from style: BlurStyle) -> UIVisualEffect {
-        switch style {
-        case .system(let uiStyle):
-            return UIBlurEffect(style: uiStyle)
-
-        case .custom:
-            // Attach any UIBlurEffect; your existing private pipeline controls the look.
-            // (This mirrors what you were doing in your stub.)
-            return UIBlurEffect(style: .light)
-        }
-    }
-
-    /// iOS 26: Some builds have a bug where setting `effect = nil` after a `UIGlassEffect`
-    /// does not remove the effect; setting an intermediate effect first works around it.
-    func clearEffectWorkaroundIfNeeded() {
-        guard #available(iOS 26.0, *), self.effect is UIGlassEffect else { return }
-        self.effect = UIBlurEffect(style: .systemMaterial)
-    }
-}
