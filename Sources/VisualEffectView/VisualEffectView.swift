@@ -65,9 +65,15 @@ open class VisualEffectView: UIVisualEffectView {
     }
     
     /// High-level switch for the backing material.
-    /// Default keeps existing behavior by using `.customBlur`.
+    /// Default is `.customBlur` for backward compatibility.
+    ///
+    /// - Note: When using `.systemBlur` or `.glass`, custom blur properties
+    ///   (blurRadius, colorTint, etc.) are ignored.
     public var style: VisualEffectStyle = .customBlur {
-        didSet { applyStyle(style) }
+        didSet {
+            guard style != oldValue else { return }
+            applyStyle(style)
+        }
     }
     
     // MARK: - Preserve custom settings across style switches
@@ -100,6 +106,8 @@ open class VisualEffectView: UIVisualEffectView {
         }
         set {
             customSnapshot.colorTint = newValue
+            guard case .customBlur = style else { return }
+            
             prepareForChanges()
             sourceOver?.setValue(newValue, forKeyPath: "color")
             sourceOver?.perform(Selector(("applyRequestedEffectToView:")), with: overlayView)
@@ -132,6 +140,8 @@ open class VisualEffectView: UIVisualEffectView {
         }
         set {
             customSnapshot.blurRadius = newValue
+            guard case .customBlur = style else { return }
+            
             prepareForChanges()
             gaussianBlur?.requestedValues?["inputRadius"] = newValue
             applyChanges()
@@ -150,6 +160,8 @@ open class VisualEffectView: UIVisualEffectView {
         get { return _value(forKey: .saturationDeltaFactor) ?? 1.0 }
         set {
             customSnapshot.saturation = newValue
+            guard case .customBlur = style else { return }
+            
             _setValue(newValue, forKey: .saturationDeltaFactor)
         }
     }
@@ -166,21 +178,33 @@ open class VisualEffectView: UIVisualEffectView {
         get { return _value(forKey: .scale) ?? 1.0 }
         set {
             customSnapshot.scale = newValue
+            guard case .customBlur = style else { return }
+            
             _setValue(newValue, forKey: .scale)
         }
     }
     
     // MARK: - Initialization
     
+    /// Creates a visual effect view with customizable blur (legacy default for backward compatibility).
+    public convenience init() {
+        self.init(effect: nil)
+    }
+    
     public override init(effect: UIVisualEffect?) {
         super.init(effect: effect)
-        // Keep previous default behavior: custom pipeline “on”
-        applyStyle(style)
+        
+        // If no effect provided, use legacy default for backward compatibility
+        if effect == nil {
+            applyStyle(.customBlur)
+        }
+        // Otherwise, respect the passed effect
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        applyStyle(style)
+        // Interface Builder instances default to custom blur
+        applyStyle(.customBlur)
     }
     
 }
@@ -198,29 +222,28 @@ private extension VisualEffectView {
             self.effect = UIBlurEffect(style: style)
             
         case .customBlur:
-            // Switch back to your private/custom effect object
+            // Switch back to custom effect object
             self.effect = blurEffect
             // Re-apply settings snapshot so switching styles is reversible
             reapplyCustomSnapshot()
             
         case .glass(let glass):
             if #available(iOS 26.0, *) {
-                self.effect = UIGlassEffect(style: glass.uiStyle) // UIKit iOS 26 API
+                self.effect = UIGlassEffect(style: glass.uiStyle)
             } else {
-                // graceful fallback on older OS
-                self.effect = UIBlurEffect(style: .systemThinMaterial)
+                // Graceful fallback on older OS with style-appropriate blur
+                self.effect = UIBlurEffect(style: glass.fallbackBlurStyle)
             }
         }
     }
     
     func reapplyCustomSnapshot() {
-        // Apply in a safe order; these call into your existing private pipeline
+        // Apply in a safe order; these call into the existing custom pipeline
         self.scale = customSnapshot.scale
         self.saturation = customSnapshot.saturation
         self.blurRadius = customSnapshot.blurRadius
         self.colorTint = customSnapshot.colorTint
     }
-    
     
 }
 
@@ -244,4 +267,5 @@ private extension VisualEffectView {
     
 }
 
+// Available keys for reference:
 // ["grayscaleTintLevel", "grayscaleTintAlpha", "lightenGrayscaleWithSourceOver", "colorTint", "colorTintAlpha", "colorBurnTintLevel", "colorBurnTintAlpha", "darkeningTintAlpha", "darkeningTintHue", "darkeningTintSaturation", "darkenWithSourceOver", "blurRadius", "saturationDeltaFactor", "scale", "zoom"]
